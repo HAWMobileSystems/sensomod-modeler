@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/SenSoMod/src-gen" creationIcons="false" editDirectory="/SenSoMod.edit/src-gen"
+    editorDirectory="/SenSoMod.editor/src-gen" modelPluginID="SenSoMod" modelName="SenSoMod"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>senSoMod.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="SenSoMod" disposableProviderFactory="true" ecorePackage="senSoMod.ecore#/">
+    <genClasses ecoreClass="senSoMod.ecore#//Modell">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Modell/node"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//PhysicalSensor"/>
+    <genClasses ecoreClass="senSoMod.ecore#//VirtualSensor"/>
+    <genClasses ecoreClass="senSoMod.ecore#//AtomicSensor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference senSoMod.ecore#//AtomicSensor/computedsensor"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//Sensor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Sensor/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Sensor/multiple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Sensor/output"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//ComputedSensor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//ComputedSensor/decisionlogic"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Node/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Node/description"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//ContextDescription">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//ContextDescription/contextexpression"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//Context">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Context/contextdescription"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Context/decisionlogic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Context/output"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//DecisionLogic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//DecisionLogic/name"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Output/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Output/type"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Element/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Element/type"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//ContextExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//ContextExpression/name"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Type/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Type/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Type/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

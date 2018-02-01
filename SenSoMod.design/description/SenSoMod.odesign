@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="SenSoMod" version="12.0.0.2017041100">
+  <ownedViewpoints name="SenSoMod" modelFileExtension="sensomod">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="diagram" domainClass="senSoMod::Modell" enablePopupBars="true">
+      <metamodel href="file:/C:/Users/florian/Downloads/ObeoDesigner-Community/workspace/SenSoMod/model/senSoMod.ecore#/"/>
+      <validationSet name="Validate diagramm">
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="NodeNoName" level="ERROR" message="Node has no Name set" targetClass="senSoMod::Node">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Node).name.toString().size()>0"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="ElementNoType" level="ERROR" message="aql:self.oclAsType(senSoMod::Element).name+' has no Type set'" targetClass="senSoMod::Element">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Element).type.toString().size()>0"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="TypeNoType" level="ERROR" message="aql:self.oclAsType(senSoMod::Type).name+' has no Type set'" targetClass="senSoMod::Type">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Type).type.toString().size()>0"/>
+        </ownedRules>
+      </validationSet>
+      <defaultLayer name="Default">
+        <edgeMappings name="ContextDescRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteContextDesRelation']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']" targetFinderExpression="feature:contextdescription">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ContextRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteContextRelation']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']" targetFinderExpression="feature:context">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ComputedSensorRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteComSenRel']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']" targetFinderExpression="feature:computedsensor">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ContextNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::Context">
+          <subNodeMappings name="Decision Logic" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:decisionlogic" domainClass="senSoMod::DecisionLogic">
+            <style xsi:type="style:SquareDescription" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="Output" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:output" domainClass="senSoMod::Output">
+            <subContainerMappings name="Type" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:type" domainClass="senSoMod::Type">
+              <subNodeMappings name="Element" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:element" domainClass="senSoMod::Element">
+                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_type.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_context.png" tooltipExpression="Context" workspacePath="/SenSoMod.design/img/context.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ContextDescNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::ContextDescription">
+          <subNodeMappings name="Context Expression" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:contextexpression" domainClass="senSoMod::ContextExpression">
+            <style xsi:type="style:SquareDescription" labelSize="24" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_contextexpression.png" tooltipExpression="Context Expression" workspacePath="/SenSoMod.design/img/contextexpression.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="PhysicalSensorNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::PhysicalSensor">
+          <subContainerMappings name="Output" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:output" domainClass="senSoMod::Output">
+            <subContainerMappings name="Type" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:type" domainClass="senSoMod::Type">
+              <subNodeMappings name="Element" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:element" domainClass="senSoMod::Element">
+                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_type.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" tooltipExpression="Physical Sensor" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="VirtualSensorNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::VirtualSensor">
+          <subContainerMappings name="Output" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:output" domainClass="senSoMod::Output">
+            <subContainerMappings name="Type" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:type" domainClass="senSoMod::Type">
+              <subNodeMappings name="Element" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:element" domainClass="senSoMod::Element">
+                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_type.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png" tooltipExpression="Virtual Sensor" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ComputedSensorNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::ComputedSensor">
+          <subNodeMappings name="Decision Logic" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:decisionlogic" domainClass="senSoMod::DecisionLogic">
+            <style xsi:type="style:SquareDescription" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="Output" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:output" domainClass="senSoMod::Output">
+            <subContainerMappings name="Type" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:type" domainClass="senSoMod::Type">
+              <subNodeMappings name="Element" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:element" domainClass="senSoMod::Element">
+                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_type.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/computed_sensor.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Nodes">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteNode">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Context" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']" iconPath="/SenSoMod.design/img/icon_context.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Context" referenceName="node"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Context Description" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']" iconPath="/SenSoMod.design/img/icon_contextexpression.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextDescription" referenceName="node"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Physical Sensor" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::PhysicalSensor" referenceName="node"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Virtual Sensor" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::VirtualSensor" referenceName="node"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Computed Sensor" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']" iconPath="/SenSoMod.design/img/icon_computed_sensor.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ComputedSensor" referenceName="node"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Computed Sensor" edgeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ComputedSensorRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="computedsensor" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Context" edgeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="context" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Context Description" edgeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="contextdescription" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteComSenRel">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="computedsensor"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteContextRelation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="context" elementExpression="aql:elementView.targetNode.target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="deleteContextDesRelation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="contextdescription"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Features">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Decision Logic" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subNodeMappings[name='Decision%20Logic'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']/@subNodeMappings[name='Decision%20Logic']" iconPath="/SenSoMod.design/img/icon_decision_logic.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::DecisionLogic" referenceName="decisionlogic"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Context Expression" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']" iconPath="/SenSoMod.design/img/icon_contextexpression.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextExpression" referenceName="contextexpression"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Element" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element']" iconPath="/SenSoMod.design/img/icon_element.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Output" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']" iconPath="/SenSoMod.design/img/icon_output.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Type" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']" iconPath="/SenSoMod.design/img/icon_type.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Direct Edit Label">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Direct Edit Label">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="SenSoMod.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

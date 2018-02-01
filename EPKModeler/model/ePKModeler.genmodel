@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/EPKModeler/src-gen" creationIcons="false" editDirectory="/EPKModeler.edit/src-gen"
+    editorDirectory="/EPKModeler.editor/src-gen" modelPluginID="EPKModeler" modelName="EPKModeler"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ePKModeler.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="EPKModeler" disposableProviderFactory="true" ecorePackage="ePKModeler.ecore#/">
+    <genClasses ecoreClass="ePKModeler.ecore#//Kontrollflusselement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ePKModeler.ecore#//Kontrollflusselement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ePKModeler.ecore#//Kontrollflusselement/funktion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ePKModeler.ecore#//Kontrollflusselement/ereignis"/>
+    </genClasses>
+    <genClasses ecoreClass="ePKModeler.ecore#//Funktion"/>
+    <genClasses ecoreClass="ePKModeler.ecore#//Ereignis"/>
+    <genClasses ecoreClass="ePKModeler.ecore#//Modell">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ePKModeler.ecore#//Modell/kontrollflusselement"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

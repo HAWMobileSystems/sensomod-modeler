@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Category"
+            id="SenSoMod.SourceCodeGenerator.commands.category">
+      </category>
+      <command
+            categoryId="SenSoMod.SourceCodeGenerator.commands.category"
+            defaultHandler="sensomod.javasourcecodegen.handlers.Handler"
+            id="SenSoMod.SourceCodeGenerator.commands.Command"
+            name="Generate JavaSourceCode">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="SenSoMod.SourceCodeGenerator.commands.Command"
+            class="sensomod.javasourcecodegen.handlers.Handler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="SenSoMod.SourceCodeGenerator.commands.Command"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Generate JavaSourceCode"
+               mnemonic="M"
+               id="SenSoMod.SourceCodeGenerator.menus.Menu">
+            <command
+                  commandId="SenSoMod.SourceCodeGenerator.commands.Command"
+                  id="SenSoMod.SourceCodeGenerator.commands.Command"
+                  label="Java SourceCodeGenerator"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="SenSoMod.SourceCodeGenerator.toolbars.Toolbar"
+               label="Toolbar">
+            <command
+                  commandId="SenSoMod.SourceCodeGenerator.commands.Command"
+                  icon="icons/sample.png"
+                  id="SenSoMod.SourceCodeGenerator.toolbars.Command"
+                  label="SourceCodeGenerator"
+                  tooltip="Generate JavaSourceCode">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
