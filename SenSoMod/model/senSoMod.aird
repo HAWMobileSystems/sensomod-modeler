@@ -4,7 +4,6 @@
     <semanticResources>senSoMod.ecore</semanticResources>
     <semanticResources>senSoMod.genmodel</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>senSoMod%20Orginal.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_Vsp5UNnZEeeW_bDv6eo7oA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_VtOhFdnZEeeW_bDv6eo7oA" name="senSoMod" repPath="#_VtCT0NnZEeeW_bDv6eo7oA">
