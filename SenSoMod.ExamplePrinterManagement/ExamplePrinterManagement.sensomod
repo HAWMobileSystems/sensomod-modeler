@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<senSoMod:Modell xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senSoMod="http://www.example.org/senSoMod">
+  <node xsi:type="senSoMod:PhysicalSensor" name="WIFI" computedsensor="//@node.1">
+    <output>
+      <type name="Router" type="class">
+        <element name="SSID" type="String"/>
+      </type>
+    </output>
+  </node>
+  <node xsi:type="senSoMod:ComputedSensor" name="UserLocation" context="//@node.2">
+    <output>
+      <type name="Building" type="Enum">
+        <element name="NearbyRoom1" type="Enum"/>
+        <element name="NearbyRoom2" type="Enum"/>
+        <element name="NearbyRoom3" type="Enum"/>
+        <element name="Unknown" type="Enum"/>
+      </type>
+    </output>
+    <decisionlogic name="if(SSID==&quot;WlanRoom1&quot;){location=&quot;NearbyRoom1&quot;}if(SSID==&quot;WlanRoom2&quot;){location=&quot;NearbyRoom2&quot;}if(SSID==&quot;WlanRoom3&quot;){location=&quot;NearbyRoom3&quot;}else{location=&quot;unknown&quot;}"/>
+  </node>
+  <node xsi:type="senSoMod:Context" name="PrinterManagement" contextdescription="//@node.5 //@node.4">
+    <decisionlogic name="if(UserLocation == NearbyRoom1 &amp;&amp; Printer.ID ==PrinterRoom1 &amp;&amp; Printer.State != normal){Maintain Printer 1}"/>
+    <output>
+      <type name="State" type="Enum">
+        <element name="MaintainPrinter1" type="Enum"/>
+        <element name="MaintainPrinter2" type="Enum"/>
+        <element name="MaintainPrinter3" type="Enum"/>
+        <element name="nothingToDo" type="Enum"/>
+      </type>
+    </output>
+  </node>
+  <node xsi:type="senSoMod:PhysicalSensor" name="PrinterStatus" context="//@node.2">
+    <output>
+      <type name="Printer" type="Class">
+        <element name="ID" type="String"/>
+        <element name="State" type="Enum"/>
+      </type>
+    </output>
+  </node>
+  <node xsi:type="senSoMod:ContextDescription" name="CS1">
+    <contextexpression name="PrinterManagement = Maintain Printer x "/>
+  </node>
+  <node xsi:type="senSoMod:ContextDescription" name="CS2">
+    <contextexpression name="PrinterManagement = Nothing to do "/>
+  </node>
+</senSoMod:Modell>

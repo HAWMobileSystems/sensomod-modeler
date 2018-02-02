@@ -2,13 +2,16 @@
  */
 package senSoMod.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import senSoMod.Context;
 import senSoMod.ContextDescription;
 import senSoMod.DecisionLogic;
@@ -32,14 +35,14 @@ import senSoMod.SenSoModPackage;
  */
 public class ContextImpl extends NodeImpl implements Context {
 	/**
-	 * The cached value of the '{@link #getContextdescription() <em>Contextdescription</em>}' reference.
+	 * The cached value of the '{@link #getContextdescription() <em>Contextdescription</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContextdescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected ContextDescription contextdescription;
+	protected EList<ContextDescription> contextdescription;
 
 	/**
 	 * The cached value of the '{@link #getDecisionlogic() <em>Decisionlogic</em>}' containment reference.
@@ -151,39 +154,12 @@ public class ContextImpl extends NodeImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextDescription getContextdescription() {
-		if (contextdescription != null && contextdescription.eIsProxy()) {
-			InternalEObject oldContextdescription = (InternalEObject) contextdescription;
-			contextdescription = (ContextDescription) eResolveProxy(oldContextdescription);
-			if (contextdescription != oldContextdescription) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION, oldContextdescription, contextdescription));
-			}
+	public EList<ContextDescription> getContextdescription() {
+		if (contextdescription == null) {
+			contextdescription = new EObjectResolvingEList<ContextDescription>(ContextDescription.class, this,
+					SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION);
 		}
 		return contextdescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContextDescription basicGetContextdescription() {
-		return contextdescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setContextdescription(ContextDescription newContextdescription) {
-		ContextDescription oldContextdescription = contextdescription;
-		contextdescription = newContextdescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION,
-					oldContextdescription, contextdescription));
 	}
 
 	/**
@@ -245,9 +221,7 @@ public class ContextImpl extends NodeImpl implements Context {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION:
-			if (resolve)
-				return getContextdescription();
-			return basicGetContextdescription();
+			return getContextdescription();
 		case SenSoModPackage.CONTEXT__DECISIONLOGIC:
 			return getDecisionlogic();
 		case SenSoModPackage.CONTEXT__OUTPUT:
@@ -266,7 +240,8 @@ public class ContextImpl extends NodeImpl implements Context {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION:
-			setContextdescription((ContextDescription) newValue);
+			getContextdescription().clear();
+			getContextdescription().addAll((Collection<? extends ContextDescription>) newValue);
 			return;
 		case SenSoModPackage.CONTEXT__DECISIONLOGIC:
 			setDecisionlogic((DecisionLogic) newValue);
@@ -287,7 +262,7 @@ public class ContextImpl extends NodeImpl implements Context {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION:
-			setContextdescription((ContextDescription) null);
+			getContextdescription().clear();
 			return;
 		case SenSoModPackage.CONTEXT__DECISIONLOGIC:
 			setDecisionlogic((DecisionLogic) null);
@@ -308,7 +283,7 @@ public class ContextImpl extends NodeImpl implements Context {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SenSoModPackage.CONTEXT__CONTEXTDESCRIPTION:
-			return contextdescription != null;
+			return contextdescription != null && !contextdescription.isEmpty();
 		case SenSoModPackage.CONTEXT__DECISIONLOGIC:
 			return decisionlogic != null;
 		case SenSoModPackage.CONTEXT__OUTPUT:

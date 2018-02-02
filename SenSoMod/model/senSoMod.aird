@@ -731,7 +731,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7JOEoNndEeeW_bDv6eo7oA" name="[0..1] contextdescription" sourceNode="_ifv74NnaEeeW_bDv6eo7oA" targetNode="_RkLLkNnaEeeW_bDv6eo7oA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7JOEoNndEeeW_bDv6eo7oA" name="[0..*] contextdescription" sourceNode="_ifv74NnaEeeW_bDv6eo7oA" targetNode="_RkLLkNnaEeeW_bDv6eo7oA">
       <target xmi:type="ecore:EReference" href="senSoMod.ecore#//Context/contextdescription"/>
       <semanticElements xmi:type="ecore:EReference" href="senSoMod.ecore#//Context/contextdescription"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_7JOEodndEeeW_bDv6eo7oA" routingStyle="manhattan" strokeColor="0,0,0">

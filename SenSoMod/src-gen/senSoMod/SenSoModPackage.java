@@ -624,7 +624,7 @@ public interface SenSoModPackage extends EPackage {
 	int CONTEXT__DESCRIPTION = NODE__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Contextdescription</b></em>' reference.
+	 * The feature id for the '<em><b>Contextdescription</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1239,10 +1239,10 @@ public interface SenSoModPackage extends EPackage {
 	EAttribute getType_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link senSoMod.Context#getContextdescription <em>Contextdescription</em>}'.
+	 * Returns the meta object for the reference list '{@link senSoMod.Context#getContextdescription <em>Contextdescription</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Contextdescription</em>'.
+	 * @return the meta object for the reference list '<em>Contextdescription</em>'.
 	 * @see senSoMod.Context#getContextdescription()
 	 * @see #getContext()
 	 * @generated
@@ -1576,7 +1576,7 @@ public interface SenSoModPackage extends EPackage {
 		EAttribute TYPE__TYPE = eINSTANCE.getType_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Contextdescription</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Contextdescription</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

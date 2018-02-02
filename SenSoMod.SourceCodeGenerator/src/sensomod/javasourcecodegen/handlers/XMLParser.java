@@ -52,7 +52,10 @@ public class XMLParser {
 
 	public boolean parseXML(String fileName, String targetDir) {
 		this.targetDir = targetDir;
-		String newfileName = validateAndCorrectXML(fileName);
+		//XML from .SenSoMod Files should be XML validated (instead of & or "" in Attribute there should be &amp; &quoute; ) 
+		// To convert & in &amp; you can uncomment the following line and comment the next
+		//String newfileName = validateAndCorrectXML(fileName);
+		String newfileName = fileName;
 		extractIDsFromNodes(newfileName);
 		mapRelationToClasses(newfileName);
 		cu.setPackageDeclaration(PACKAGE);

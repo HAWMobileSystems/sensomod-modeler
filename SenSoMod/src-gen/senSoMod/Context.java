@@ -2,6 +2,8 @@
  */
 package senSoMod;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Context</b></em>'.
@@ -48,30 +50,20 @@ public interface Context extends Node {
 	void setOutput(Output value);
 
 	/**
-	 * Returns the value of the '<em><b>Contextdescription</b></em>' reference.
+	 * Returns the value of the '<em><b>Contextdescription</b></em>' reference list.
+	 * The list contents are of type {@link senSoMod.ContextDescription}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contextdescription</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contextdescription</em>' reference.
-	 * @see #setContextdescription(ContextDescription)
+	 * @return the value of the '<em>Contextdescription</em>' reference list.
 	 * @see senSoMod.SenSoModPackage#getContext_Contextdescription()
 	 * @model
 	 * @generated
 	 */
-	ContextDescription getContextdescription();
-
-	/**
-	 * Sets the value of the '{@link senSoMod.Context#getContextdescription <em>Contextdescription</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contextdescription</em>' reference.
-	 * @see #getContextdescription()
-	 * @generated
-	 */
-	void setContextdescription(ContextDescription value);
+	EList<ContextDescription> getContextdescription();
 
 	/**
 	 * Returns the value of the '<em><b>Decisionlogic</b></em>' containment reference.

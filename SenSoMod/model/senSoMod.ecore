@@ -30,7 +30,8 @@
         eType="#//ContextExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Node">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contextdescription" eType="#//ContextDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextdescription" upperBound="-1"
+        eType="#//ContextDescription"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decisionlogic" eType="#//DecisionLogic"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="#//Output"
