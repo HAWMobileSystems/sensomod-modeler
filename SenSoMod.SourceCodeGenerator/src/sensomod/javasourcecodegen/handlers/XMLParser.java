@@ -5,10 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -35,7 +40,8 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
 public class XMLParser {
-
+	private static final Logger log = Logger.getLogger(XMLParser.class.getName());
+	private FileHandler fileHandler;
 	public static final String PACKAGE = "sensomod.generated";
 	public static final QName TYPE_XSI = new QName("http://www.w3.org/2001/XMLSchema-instance", "type", "xsi");
 	private CompilationUnit cu = new CompilationUnit();
@@ -50,11 +56,28 @@ public class XMLParser {
 	private boolean output = false;
 	private boolean type = false;
 
+
 	public boolean parseXML(String fileName, String targetDir) {
 		this.targetDir = targetDir;
-		//XML from .SenSoMod Files should be XML validated (instead of & or "" in Attribute there should be &amp; &quoute; ) 
-		// To convert & in &amp; you can uncomment the following line and comment the next
-		//String newfileName = validateAndCorrectXML(fileName);
+
+		// Logging
+		try {
+			fileHandler = new FileHandler(targetDir + "/log.txt");
+			SimpleFormatter formatter = new SimpleFormatter();
+			fileHandler.setFormatter(formatter);
+			log.addHandler(fileHandler);
+			log.info("...Start Parsing .sensomod...");
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// XML from .SenSoMod Files should be XML validated (instead of & or "" in
+		// Attribute there should be &amp; &quoute; )
+		// To convert & in &amp; you can uncomment the following line and comment the
+		// next
+		// String newfileName = validateAndCorrectXML(fileName);
 		String newfileName = fileName;
 		extractIDsFromNodes(newfileName);
 		mapRelationToClasses(newfileName);
@@ -66,7 +89,7 @@ public class XMLParser {
 				XMLEvent xmlEvent = xmlEventReader.nextEvent();
 				if (xmlEvent.isStartElement()) {
 					StartElement startElement = xmlEvent.asStartElement();
-					System.out.println("start " + startElement.getName().getLocalPart());
+					log.info("start " + startElement.getName().getLocalPart());
 					if (startElement.getName().getLocalPart().equals("node")) {
 						Attribute xsiTypeAttr = startElement.getAttributeByName(TYPE_XSI);
 						Attribute nameAttr = startElement.getAttributeByName(new QName("name"));
@@ -93,12 +116,12 @@ public class XMLParser {
 									block.addStatement(namexpr2);
 								}
 							} catch (NullPointerException e) {
-								System.out.println(className + " has multiple not set");
+								log.info(className + " has multiple not set");
 							}
 
-							System.out.println("classType " + classType);
-							System.out.println("className " + className);
-							System.out.println("multiple " + multiple);
+							log.info("classType " + classType);
+							log.info("className " + className);
+							log.info("multiple " + multiple);
 							// Superklasse erzeugen
 							createSuperClass(classType);
 							// Von Superklase ableiten
@@ -130,6 +153,7 @@ public class XMLParser {
 						try {
 							type = typeAttr.getValue().replaceAll("[^a-zA-Z0-9]", "").trim();
 						} catch (Exception e) {
+							log.log(Level.SEVERE, e.getMessage(), e);
 						}
 						method.setType(type);
 						// Erzeugt Klasse für Type z.b. Router
@@ -172,7 +196,7 @@ public class XMLParser {
 						Attribute dlAttr = startElement.getAttributeByName(new QName("name"));
 						if (dlAttr != null) {
 							String contextExpression = dlAttr.getValue();
-							System.out.println(contextExpression);
+							log.info(contextExpression);
 							method = myClass.addMethod("contextExpression", Modifier.PUBLIC);
 							if (method.getBody().isPresent()) {
 								BlockStmt block = method.getBody().get();
@@ -205,7 +229,9 @@ public class XMLParser {
 
 		} catch (FileNotFoundException | XMLStreamException | NullPointerException e) {
 			e.printStackTrace();
+			log.log(Level.SEVERE, e.getMessage(), e);
 		}
+		fileHandler.close();
 		return true;
 	}
 
@@ -226,6 +252,8 @@ public class XMLParser {
 			out.println(cu);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			log.log(Level.SEVERE, e.getMessage(), e);
+
 		}
 	}
 
@@ -257,6 +285,8 @@ public class XMLParser {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			log.log(Level.SEVERE, e.getMessage(), e);
+
 		}
 		return newFileName;
 	}
@@ -270,7 +300,7 @@ public class XMLParser {
 				XMLEvent xmlEvent = xmlEventReader.nextEvent();
 				if (xmlEvent.isStartElement()) {
 					StartElement startElement = xmlEvent.asStartElement();
-					System.out.println("start " + startElement.getName().getLocalPart());
+					log.info("start " + startElement.getName().getLocalPart());
 					if (startElement.getName().getLocalPart().equals("node")) {
 						Attribute xsiTypeAttr = startElement.getAttributeByName(TYPE_XSI);
 						Attribute nameAttr = startElement.getAttributeByName(new QName("name"));
@@ -284,8 +314,10 @@ public class XMLParser {
 
 		} catch (FileNotFoundException | XMLStreamException | NullPointerException e) {
 			e.printStackTrace();
+			log.log(Level.SEVERE, e.getMessage(), e);
+
 		}
-		System.out.println(nodeNumbers);
+		log.info(nodeNumbers.toString());
 	}
 
 	// Verwendet die NodeNumbers um Sensoren den Contexten zuordnen, bzw. Context
@@ -298,7 +330,7 @@ public class XMLParser {
 				XMLEvent xmlEvent = xmlEventReader.nextEvent();
 				if (xmlEvent.isStartElement()) {
 					StartElement startElement = xmlEvent.asStartElement();
-					System.out.println("start " + startElement.getName().getLocalPart());
+					log.info("start " + startElement.getName().getLocalPart());
 					if (startElement.getName().getLocalPart().equals("node")) {
 						Attribute xsiTypeAttr = startElement.getAttributeByName(TYPE_XSI);
 						Attribute nameAttr = startElement.getAttributeByName(new QName("name"));
@@ -319,7 +351,7 @@ public class XMLParser {
 									for (String contextNo : contextsArry) {
 										int contextNoInt = Integer.parseInt(contextNo);
 										relationMapping.put(nodeNumbers.get(contextNoInt), className);
-										System.out.println(relationMapping);
+										log.info(relationMapping.toString());
 									}
 								}
 								// Computed Sensor Attr
@@ -332,7 +364,7 @@ public class XMLParser {
 									for (String computedSensorNo : computedSensorArry) {
 										int computedSensorNoInt = Integer.parseInt(computedSensorNo);
 										relationMapping.put(nodeNumbers.get(computedSensorNoInt), className);
-										System.out.println(relationMapping);
+										log.info(relationMapping.toString());
 									}
 								}
 								break;
@@ -348,7 +380,7 @@ public class XMLParser {
 									for (String contextdescriptionsNo : contextdescriptionsArry) {
 										int contextdescriptionsNoInt = Integer.parseInt(contextdescriptionsNo);
 										relationMapping.put(nodeNumbers.get(contextdescriptionsNoInt), className);
-										System.out.println(relationMapping);
+										log.info(relationMapping.toString());
 									}
 								}
 							}
@@ -359,7 +391,8 @@ public class XMLParser {
 
 		} catch (FileNotFoundException | XMLStreamException | NullPointerException e) {
 			e.printStackTrace();
+			log.log(Level.SEVERE, e.getMessage(), e);
 		}
-		System.out.println(nodeNumbers);
+		log.info(nodeNumbers.toString());
 	}
 }
