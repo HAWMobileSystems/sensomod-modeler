@@ -8,7 +8,6 @@
     </output>
   </node>
   <node xsi:type="senSoMod:Context" name="ZContext1" contextdescription="//@node.2">
-    <decisionlogic name="if route1 == .... dfadsfasdf"/>
     <output name="Output">
       <type name="Router" type="Object">
         <element name="routername" type="string"/>
