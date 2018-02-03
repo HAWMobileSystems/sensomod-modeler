@@ -36,45 +36,45 @@
          id="com.google.guava"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="21.0.0.v20170206-1425"
          unpack="false"/>
 
    <plugin
          id="SenSoMod.SourceCodeGenerator"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="com.github.javaparser.javaparser-core"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="3.5.10"
          unpack="false"/>
 
    <plugin
          id="SenSoMod"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.1.0.qualifier"/>
 
    <plugin
          id="SenSoMod.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="SenSoMod.design"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="SenSoMod.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.0.0.qualifier"/>
 
 </feature>
