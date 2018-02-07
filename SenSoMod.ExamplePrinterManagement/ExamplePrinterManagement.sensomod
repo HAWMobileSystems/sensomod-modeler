@@ -13,7 +13,7 @@
         <enumelement name="Location" valuesCommaSep="NearbyRoom1, NearbyRoom2, Unknown"/>
       </type>
     </output>
-    <decisionlogic name="if(SSID==&quot;WlanRoom1&quot;)&#xD;&#xA; {location=&quot;NearbyRoom1&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom2&quot;)&#xD;&#xA; {location=&quot;NearbyRoom2&quot;}&#xD;&#xA;else&#xD;&#xA; {location=&quot;Unknown&quot;}"/>
+    <decisionlogic name="if(SSID==&quot;WlanRoom1&quot;)&#xD;&#xA; {location=&quot;NearbyRoom1&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom2&quot;)&#xD;&#xA; {location=&quot;NearbyRoom2&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom3&quot;)&#xD;&#xA; {location=&quot;NearbyRoom3&quot;}&#xD;&#xA;else&#xD;&#xA; {location=&quot;Unknown&quot;}"/>
   </node>
   <node xsi:type="senSoMod:Context" name="PrinterManagement" contextdescription="//@node.5 //@node.4 //@node.6">
     <decisionlogic name="if (UserLocation==NearbyRoom1 &amp;&amp;  Printer.ID == Room1 &amp;&amp; Printer.State != normal)&#xD;&#xA; { if(Printer.State == cartridgeempty) &#xD;&#xA;  {PrinterMangementOutput = orderCartidgePrinter1}&#xD;&#xA; { if(Printer.State == paperEmpty) &#xD;&#xA;  {PrinterMangementOutput = RefillPaperPrinter1}&#xD;&#xA;if (UserLocation==NearbyRoom2 &amp;&amp;  Printer.ID == Room2 &amp;&amp; Printer.State != normal)&#xD;&#xA; { if(Printer.State == cartridgeempty) &#xD;&#xA;  {PrinterMangementOutput = orderCartidgePrinter2}&#xD;&#xA; { if(Printer.State == paperEmpty) &#xD;&#xA;  {PrinterMangementOutput = RefillPaperPrinter2}&#xD;&#xA;else &#xD;&#xA; {PrinterMangementOutput = nothingToDo}&#xD;&#xA;&#xD;&#xA;"/>

@@ -447,7 +447,7 @@
           </ownedDiagramElements>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_mNhoEAfjEei5x9BGnT2KCA" name="if(SSID==&quot;WlanRoom1&quot;)&#xD;&#xA; {location=&quot;NearbyRoom1&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom2&quot;)&#xD;&#xA; {location=&quot;NearbyRoom2&quot;}&#xD;&#xA;else&#xD;&#xA; {location=&quot;Unknown&quot;}" width="20" height="2" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_mNhoEAfjEei5x9BGnT2KCA" name="if(SSID==&quot;WlanRoom1&quot;)&#xD;&#xA; {location=&quot;NearbyRoom1&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom2&quot;)&#xD;&#xA; {location=&quot;NearbyRoom2&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom3&quot;)&#xD;&#xA; {location=&quot;NearbyRoom3&quot;}&#xD;&#xA;else&#xD;&#xA; {location=&quot;Unknown&quot;}" width="20" height="2" resizeKind="NSEW">
         <target xmi:type="senSoMod:DecisionLogic" href="ExamplePrinterManagement.sensomod#//@node.1/@decisionlogic"/>
         <semanticElements xmi:type="senSoMod:DecisionLogic" href="ExamplePrinterManagement.sensomod#//@node.1/@decisionlogic"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
