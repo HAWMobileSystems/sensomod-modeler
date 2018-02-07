@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link senSoMod.Type#getElement <em>Element</em>}</li>
  *   <li>{@link senSoMod.Type#getName <em>Name</em>}</li>
  *   <li>{@link senSoMod.Type#getType <em>Type</em>}</li>
+ *   <li>{@link senSoMod.Type#getEnumelement <em>Enumelement</em>}</li>
  * </ul>
  *
  * @see senSoMod.SenSoModPackage#getType()
@@ -92,5 +93,21 @@ public interface Type extends EObject {
 	 * @generated
 	 */
 	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Enumelement</b></em>' containment reference list.
+	 * The list contents are of type {@link senSoMod.EnumElement}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enumelement</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enumelement</em>' containment reference list.
+	 * @see senSoMod.SenSoModPackage#getType_Enumelement()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EnumElement> getEnumelement();
 
 } // Type

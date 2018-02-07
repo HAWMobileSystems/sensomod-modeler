@@ -70,7 +70,7 @@ public class DecisionLogicItemProvider extends ItemProviderAdapter implements IE
 						getResourceLocator(), getString("_UI_DecisionLogic_name_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_DecisionLogic_name_feature",
 								"_UI_DecisionLogic_type"),
-						SenSoModPackage.Literals.DECISION_LOGIC__NAME, true, false, false,
+						SenSoModPackage.Literals.DECISION_LOGIC__NAME, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -103,7 +103,7 @@ public class DecisionLogicItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DecisionLogic) object).getName();
+		String label = crop(((DecisionLogic) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_DecisionLogic_type")
 				: getString("_UI_DecisionLogic_type") + " " + label;
 	}

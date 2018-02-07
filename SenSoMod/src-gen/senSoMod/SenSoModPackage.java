@@ -872,13 +872,22 @@ public interface SenSoModPackage extends EPackage {
 	int TYPE__TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Enumelement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__ENUMELEMENT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = 3;
+	int TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -888,6 +897,52 @@ public interface SenSoModPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link senSoMod.impl.EnumElementImpl <em>Enum Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see senSoMod.impl.EnumElementImpl
+	 * @see senSoMod.impl.SenSoModPackageImpl#getEnumElement()
+	 * @generated
+	 */
+	int ENUM_ELEMENT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Values Comma Sep</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT__VALUES_COMMA_SEP = 1;
+
+	/**
+	 * The number of structural features of the '<em>Enum Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Enum Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link senSoMod.Modell <em>Modell</em>}'.
@@ -1239,6 +1294,49 @@ public interface SenSoModPackage extends EPackage {
 	EAttribute getType_Type();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link senSoMod.Type#getEnumelement <em>Enumelement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Enumelement</em>'.
+	 * @see senSoMod.Type#getEnumelement()
+	 * @see #getType()
+	 * @generated
+	 */
+	EReference getType_Enumelement();
+
+	/**
+	 * Returns the meta object for class '{@link senSoMod.EnumElement <em>Enum Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enum Element</em>'.
+	 * @see senSoMod.EnumElement
+	 * @generated
+	 */
+	EClass getEnumElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link senSoMod.EnumElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see senSoMod.EnumElement#getName()
+	 * @see #getEnumElement()
+	 * @generated
+	 */
+	EAttribute getEnumElement_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link senSoMod.EnumElement#getValuesCommaSep <em>Values Comma Sep</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Values Comma Sep</em>'.
+	 * @see senSoMod.EnumElement#getValuesCommaSep()
+	 * @see #getEnumElement()
+	 * @generated
+	 */
+	EAttribute getEnumElement_ValuesCommaSep();
+
+	/**
 	 * Returns the meta object for the reference list '{@link senSoMod.Context#getContextdescription <em>Contextdescription</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1574,6 +1672,40 @@ public interface SenSoModPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TYPE__TYPE = eINSTANCE.getType_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Enumelement</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE__ENUMELEMENT = eINSTANCE.getType_Enumelement();
+
+		/**
+		 * The meta object literal for the '{@link senSoMod.impl.EnumElementImpl <em>Enum Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see senSoMod.impl.EnumElementImpl
+		 * @see senSoMod.impl.SenSoModPackageImpl#getEnumElement()
+		 * @generated
+		 */
+		EClass ENUM_ELEMENT = eINSTANCE.getEnumElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUM_ELEMENT__NAME = eINSTANCE.getEnumElement_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Values Comma Sep</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUM_ELEMENT__VALUES_COMMA_SEP = eINSTANCE.getEnumElement_ValuesCommaSep();
 
 		/**
 		 * The meta object literal for the '<em><b>Contextdescription</b></em>' reference list feature.

@@ -16,6 +16,7 @@ import senSoMod.ContextDescription;
 import senSoMod.ContextExpression;
 import senSoMod.DecisionLogic;
 import senSoMod.Element;
+import senSoMod.EnumElement;
 import senSoMod.Modell;
 import senSoMod.Node;
 import senSoMod.Output;
@@ -130,6 +131,13 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 	 * @generated
 	 */
 	private EClass typeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enumElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -496,6 +504,42 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getType_Enumelement() {
+		return (EReference) typeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnumElement() {
+		return enumElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEnumElement_Name() {
+		return (EAttribute) enumElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEnumElement_ValuesCommaSep() {
+		return (EAttribute) enumElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getContext_Contextdescription() {
 		return (EReference) contextEClass.getEStructuralFeatures().get(0);
 	}
@@ -586,6 +630,11 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 		createEReference(typeEClass, TYPE__ELEMENT);
 		createEAttribute(typeEClass, TYPE__NAME);
 		createEAttribute(typeEClass, TYPE__TYPE);
+		createEReference(typeEClass, TYPE__ENUMELEMENT);
+
+		enumElementEClass = createEClass(ENUM_ELEMENT);
+		createEAttribute(enumElementEClass, ENUM_ELEMENT__NAME);
+		createEAttribute(enumElementEClass, ENUM_ELEMENT__VALUES_COMMA_SEP);
 	}
 
 	/**
@@ -714,9 +763,35 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getType_Type(), ecorePackage.getEString(), "type", null, 0, 1, Type.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getType_Enumelement(), this.getEnumElement(), null, "enumelement", null, 0, -1, Type.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enumElementEClass, EnumElement.class, "EnumElement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnumElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumElement_ValuesCommaSep(), ecorePackage.getEString(), "valuesCommaSep", null, 0, 1,
+				EnumElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.obeo.fr/dsl/dnc/archetype
+		createArchetypeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.obeo.fr/dsl/dnc/archetype</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createArchetypeAnnotations() {
+		String source = "http://www.obeo.fr/dsl/dnc/archetype";
+		addAnnotation(enumElementEClass, source, new String[] { "archetype", "Role" });
 	}
 
 } //SenSoModPackageImpl

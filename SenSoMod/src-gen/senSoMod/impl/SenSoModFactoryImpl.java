@@ -78,6 +78,8 @@ public class SenSoModFactoryImpl extends EFactoryImpl implements SenSoModFactory
 			return createContextExpression();
 		case SenSoModPackage.TYPE:
 			return createType();
+		case SenSoModPackage.ENUM_ELEMENT:
+			return createEnumElement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -191,6 +193,16 @@ public class SenSoModFactoryImpl extends EFactoryImpl implements SenSoModFactory
 	public Type createType() {
 		TypeImpl type = new TypeImpl();
 		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumElement createEnumElement() {
+		EnumElementImpl enumElement = new EnumElementImpl();
+		return enumElement;
 	}
 
 	/**

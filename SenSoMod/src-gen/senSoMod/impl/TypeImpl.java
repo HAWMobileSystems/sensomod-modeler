@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import senSoMod.Element;
+import senSoMod.EnumElement;
 import senSoMod.SenSoModPackage;
 import senSoMod.Type;
 
@@ -33,6 +34,7 @@ import senSoMod.Type;
  *   <li>{@link senSoMod.impl.TypeImpl#getElement <em>Element</em>}</li>
  *   <li>{@link senSoMod.impl.TypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link senSoMod.impl.TypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link senSoMod.impl.TypeImpl#getEnumelement <em>Enumelement</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,6 +88,16 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEnumelement() <em>Enumelement</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnumelement()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EnumElement> enumelement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,11 +177,26 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EnumElement> getEnumelement() {
+		if (enumelement == null) {
+			enumelement = new EObjectContainmentEList<EnumElement>(EnumElement.class, this,
+					SenSoModPackage.TYPE__ENUMELEMENT);
+		}
+		return enumelement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case SenSoModPackage.TYPE__ELEMENT:
 			return ((InternalEList<?>) getElement()).basicRemove(otherEnd, msgs);
+		case SenSoModPackage.TYPE__ENUMELEMENT:
+			return ((InternalEList<?>) getEnumelement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,6 +215,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 			return getName();
 		case SenSoModPackage.TYPE__TYPE:
 			return getType();
+		case SenSoModPackage.TYPE__ENUMELEMENT:
+			return getEnumelement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,6 +240,10 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		case SenSoModPackage.TYPE__TYPE:
 			setType((String) newValue);
 			return;
+		case SenSoModPackage.TYPE__ENUMELEMENT:
+			getEnumelement().clear();
+			getEnumelement().addAll((Collection<? extends EnumElement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +265,9 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 		case SenSoModPackage.TYPE__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
+		case SenSoModPackage.TYPE__ENUMELEMENT:
+			getEnumelement().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,6 +286,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case SenSoModPackage.TYPE__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case SenSoModPackage.TYPE__ENUMELEMENT:
+			return enumelement != null && !enumelement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -105,6 +105,7 @@ public class TypeItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SenSoModPackage.Literals.TYPE__ELEMENT);
+			childrenFeatures.add(SenSoModPackage.Literals.TYPE__ENUMELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -173,6 +174,7 @@ public class TypeItemProvider extends ItemProviderAdapter implements IEditingDom
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case SenSoModPackage.TYPE__ELEMENT:
+		case SenSoModPackage.TYPE__ENUMELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -192,6 +194,9 @@ public class TypeItemProvider extends ItemProviderAdapter implements IEditingDom
 
 		newChildDescriptors.add(createChildParameter(SenSoModPackage.Literals.TYPE__ELEMENT,
 				SenSoModFactory.eINSTANCE.createElement()));
+
+		newChildDescriptors.add(createChildParameter(SenSoModPackage.Literals.TYPE__ENUMELEMENT,
+				SenSoModFactory.eINSTANCE.createEnumElement()));
 	}
 
 	/**

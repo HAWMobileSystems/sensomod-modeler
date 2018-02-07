@@ -38,7 +38,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Context/output"/>
     </genClasses>
     <genClasses ecoreClass="senSoMod.ecore#//DecisionLogic">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//DecisionLogic/name"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute senSoMod.ecore#//DecisionLogic/name"/>
     </genClasses>
     <genClasses ecoreClass="senSoMod.ecore#//Output">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Output/name"/>
@@ -55,6 +55,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Type/element"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Type/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Type/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//Type/enumelement"/>
+    </genClasses>
+    <genClasses ecoreClass="senSoMod.ecore#//EnumElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//EnumElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//EnumElement/valuesCommaSep"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

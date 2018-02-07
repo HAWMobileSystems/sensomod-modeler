@@ -28,6 +28,8 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
+import com.github.javaparser.ast.body.EnumDeclaration;
+import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.comments.Comment;
 import com.github.javaparser.ast.comments.LineComment;
@@ -55,7 +57,6 @@ public class XMLParser {
 
 	private boolean output = false;
 	private boolean type = false;
-
 
 	public boolean parseXML(String fileName, String targetDir) {
 		this.targetDir = targetDir;
@@ -150,8 +151,10 @@ public class XMLParser {
 						method = myClass.addMethod("output", Modifier.PUBLIC);
 						Attribute typeAttr = startElement.getAttributeByName(new QName("name"));
 						String type = "Object";
+						//String arrayListType ="";
 						try {
 							type = typeAttr.getValue().replaceAll("[^a-zA-Z0-9]", "").trim();
+//							arrayListType = "ArrayList<" + type + ">";
 						} catch (Exception e) {
 							log.log(Level.SEVERE, e.getMessage(), e);
 						}
@@ -175,6 +178,27 @@ public class XMLParser {
 							}
 							// Erzeugt Klassenvariablen für Type z.b. String routername;
 							typeElementClass.addField(elementType, elementName.toLowerCase(), Modifier.PRIVATE);
+						}
+					} else if (startElement.getName().getLocalPart().equals("enumelement") && type == true) {
+						xmlEvent = xmlEventReader.nextEvent();
+						Attribute enumElementNameAttr = startElement.getAttributeByName(new QName("name"));
+						Attribute valuesTypeAttr = startElement.getAttributeByName(new QName("valuesCommaSep"));
+						if (enumElementNameAttr != null && valuesTypeAttr != null) {
+							String elementName = enumElementNameAttr.getValue();
+							String values = valuesTypeAttr.getValue().replaceAll(",", ";");
+							values = values.replaceAll(" ", "");
+							EnumDeclaration enumD = new EnumDeclaration(Modifier.PUBLIC.toEnumSet(), elementName);
+							enumD.addModifier(Modifier.STATIC);
+							typeElementClass.addMember(enumD);
+							String[] valuesArr = values.split(";");
+							for (String value : valuesArr) {
+								log.info(value);
+								enumD.addEnumConstant(value);
+							}
+
+							log.info("enum: " + enumD.toString());
+							typeElementClass.addField(elementName, elementName.toLowerCase(), Modifier.PRIVATE);
+
 						}
 
 					} else if (startElement.getName().getLocalPart().equals("decisionlogic")) {
@@ -248,6 +272,8 @@ public class XMLParser {
 	}
 
 	private void writeToDisk(CompilationUnit cu, String filename) {
+		LineComment lc = new LineComment("Use IDE to generate Constructor, Getters, Setters and toString methods");
+		cu.addOrphanComment(lc);
 		try (PrintWriter out = new PrintWriter(targetDir + "/" + filename + ".java")) {
 			out.println(cu);
 		} catch (FileNotFoundException e) {
@@ -395,4 +421,5 @@ public class XMLParser {
 		}
 		log.info(nodeNumbers.toString());
 	}
+
 }

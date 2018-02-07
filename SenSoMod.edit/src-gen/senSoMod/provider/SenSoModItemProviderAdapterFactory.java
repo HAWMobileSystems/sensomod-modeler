@@ -326,6 +326,29 @@ public class SenSoModItemProviderAdapterFactory extends SenSoModAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link senSoMod.EnumElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumElementItemProvider enumElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link senSoMod.EnumElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumElementAdapter() {
+		if (enumElementItemProvider == null) {
+			enumElementItemProvider = new EnumElementItemProvider(this);
+		}
+
+		return enumElementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -446,6 +469,8 @@ public class SenSoModItemProviderAdapterFactory extends SenSoModAdapterFactory
 			contextExpressionItemProvider.dispose();
 		if (typeItemProvider != null)
 			typeItemProvider.dispose();
+		if (enumElementItemProvider != null)
+			enumElementItemProvider.dispose();
 	}
 
 }
