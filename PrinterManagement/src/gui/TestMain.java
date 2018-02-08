@@ -2,6 +2,8 @@ package gui;
 
 import sensomod.generated.PrinterManagement;
 
+//Just for simple Tests
+
 public class TestMain {
 
 	public static void main(String[] args) {

@@ -93,7 +93,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_contextexpression.png" tooltipExpression="Context Expression" workspacePath="/SenSoMod.design/img/contextexpression.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_contextexpression.png" tooltipExpression="Context Expression" workspacePath="/SenSoMod.design/img/contextexpression.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -129,7 +129,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" tooltipExpression="Physical Sensor" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" tooltipExpression="Physical Sensor" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -165,7 +165,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png" tooltipExpression="Virtual Sensor" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png" tooltipExpression="Virtual Sensor" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -208,7 +208,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/computed_sensor.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/computed_sensor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
