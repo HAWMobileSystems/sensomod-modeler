@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export computed_sensor.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="1.70333in" height="1.58522in"
+		viewBox="0 0 122.64 114.136" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#008e1d;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {stroke:#008e1d;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:none;stroke:#008e1d;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group30-1" transform="translate(0.375,-0.375)" v:mID="30" v:groupContext="group">
+			<title>Tabelle.30</title>
+			<g id="shape31-2" v:mID="31" v:groupContext="shape">
+				<title>Tabelle.31</title>
+				<rect x="0" y="0.750001" width="121.89" height="113.386" class="st1"/>
+			</g>
+			<g id="shape32-4" v:mID="32" v:groupContext="shape" transform="translate(0,-83.2677)">
+				<title>Tabelle.32</title>
+				<path d="M0 114.14 L121.89 114.14" class="st2"/>
+			</g>
+			<g id="shape33-7" v:mID="33" v:groupContext="shape" transform="translate(0,-83.2677)">
+				<title>Tabelle.33</title>
+				<rect x="0" y="84.0177" width="121.89" height="30.1181" class="st3"/>
+			</g>
+			<g id="shape34-9" v:mID="34" v:groupContext="shape" transform="translate(0,-41.2073)">
+				<title>Tabelle.34</title>
+				<path d="M0 114.14 L121.89 114.14" class="st2"/>
+			</g>
+		</g>
+	</g>
+</svg>
