@@ -193,13 +193,13 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_glHYpgfkEei5x9BGnT2KCA"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_glHYoQfkEei5x9BGnT2KCA" fontName="Segoe UI" fontHeight="24"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glHYogfkEei5x9BGnT2KCA" x="36" y="85"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_glHYogfkEei5x9BGnT2KCA" x="36" y="107"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_gA-JxQfkEei5x9BGnT2KCA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_gA-JxgfkEei5x9BGnT2KCA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gA-JwQfkEei5x9BGnT2KCA" fontName="Segoe UI" fontHeight="24"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gA-JwgfkEei5x9BGnT2KCA" x="1325" y="1962" width="286" height="276"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gA-JwgfkEei5x9BGnT2KCA" x="1325" y="1940" width="300" height="298"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_uTMcwAflEei5x9BGnT2KCA" type="2002" element="_uTHkQAflEei5x9BGnT2KCA">
           <children xmi:type="notation:Node" xmi:id="_uTMcwwflEei5x9BGnT2KCA" type="5006"/>
@@ -307,24 +307,8 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_tRo5IQflEei5x9BGnT2KCA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_tRo5IgflEei5x9BGnT2KCA" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tRo5IwflEei5x9BGnT2KCA" points="[-21, -34, 196, 319]$[-72, -116, 145, 237]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tRpgNgflEei5x9BGnT2KCA" id="(0.3047872500526733,0.12474133026010124)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tRpgNgflEei5x9BGnT2KCA" id="(0.2905638450502152,0.18935774212009376)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tRpgNwflEei5x9BGnT2KCA" id="(0.3761609907120744,0.41586707082890284)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_p7rc8A_HEei7rOrXcI2zXA" type="4001" element="_p7kvQA_HEei7rOrXcI2zXA" source="_HKAQMAfkEei5x9BGnT2KCA" target="_9TS-4AflEei5x9BGnT2KCA">
-          <children xmi:type="notation:Node" xmi:id="_p7rc9A_HEei7rOrXcI2zXA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p7rc9Q_HEei7rOrXcI2zXA" x="4" y="-5"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_p7sEAA_HEei7rOrXcI2zXA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p7sEAQ_HEei7rOrXcI2zXA" x="-3" y="4"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_p7sEAg_HEei7rOrXcI2zXA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p7sEAw_HEei7rOrXcI2zXA" x="-4" y="4"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_p7rc8Q_HEei7rOrXcI2zXA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_p7rc8g_HEei7rOrXcI2zXA" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_p7rc8w_HEei7rOrXcI2zXA" points="[232, -354, -178, 269]$[302, -460, -108, 163]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p7sEBA_HEei7rOrXcI2zXA" id="(0.5464396284829721,0.5412213740458015)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p7sEBQ_HEei7rOrXcI2zXA" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_qEKDgA_HEei7rOrXcI2zXA" type="4001" element="_qEFyEA_HEei7rOrXcI2zXA" source="_HKAQMAfkEei5x9BGnT2KCA" target="_jJXG4AstEeiiQ5i3MHgGDg">
           <children xmi:type="notation:Node" xmi:id="_qEKqkA_HEei7rOrXcI2zXA" type="6001">
@@ -358,6 +342,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qx23AA_HEei7rOrXcI2zXA" id="(0.5464396284829721,0.5412213740458015)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qx23AQ_HEei7rOrXcI2zXA" id="(0.5,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_DCqrUA_PEei7rOrXcI2zXA" type="4001" element="_DCj9oA_PEei7rOrXcI2zXA" source="_HKAQMAfkEei5x9BGnT2KCA" target="_9TS-4AflEei5x9BGnT2KCA">
+          <children xmi:type="notation:Node" xmi:id="_DCrSYA_PEei7rOrXcI2zXA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DCrSYQ_PEei7rOrXcI2zXA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_DCrSYg_PEei7rOrXcI2zXA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DCrSYw_PEei7rOrXcI2zXA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_DCr5cA_PEei7rOrXcI2zXA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DCr5cQ_PEei7rOrXcI2zXA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_DCqrUQ_PEei7rOrXcI2zXA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_DCqrUg_PEei7rOrXcI2zXA" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DCqrUw_PEei7rOrXcI2zXA" points="[0, 0, -157, 269]$[157, -269, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DCr5cg_PEei7rOrXcI2zXA" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DCr5cw_PEei7rOrXcI2zXA" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_oiH9YAfiEei5x9BGnT2KCA" name="WIFI" tooltipText="Physical Sensor" outgoingEdges="_9z3nQAfjEei5x9BGnT2KCA">
@@ -366,7 +366,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_oiIkcAfiEei5x9BGnT2KCA" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_jNY50A_kEei7rOrXcI2zXA" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']"/>
@@ -410,7 +410,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_-l26UAfiEei5x9BGnT2KCA" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" workspacePath="/SenSoMod.design/img/computed_sensor.svg">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_jpBF4A_kEei7rOrXcI2zXA" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" workspacePath="/SenSoMod.design/img/computed_sensor.svg">
         <customFeatures>labelAlignment</customFeatures>
         <customFeatures>labelPosition</customFeatures>
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@style"/>
@@ -469,7 +469,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ComputedSensorRelation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_HJ7XsAfkEei5x9BGnT2KCA" name="PrinterManagement" tooltipText="Context" outgoingEdges="_p7kvQA_HEei7rOrXcI2zXA _qEFyEA_HEei7rOrXcI2zXA _qxwwYA_HEei7rOrXcI2zXA" incomingEdges="_sKQaUAflEei5x9BGnT2KCA _tRgWQAflEei5x9BGnT2KCA">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_HJ7XsAfkEei5x9BGnT2KCA" name="PrinterManagement" tooltipText="Context" outgoingEdges="_qEFyEA_HEei7rOrXcI2zXA _qxwwYA_HEei7rOrXcI2zXA _DCj9oA_PEei7rOrXcI2zXA" incomingEdges="_sKQaUAflEei5x9BGnT2KCA _tRgWQAflEei5x9BGnT2KCA">
       <target xmi:type="senSoMod:Context" href="ExamplePrinterManagement.sensomod#//@node.2"/>
       <semanticElements xmi:type="senSoMod:Context" href="ExamplePrinterManagement.sensomod#//@node.2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -530,7 +530,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gA5RQQfkEei5x9BGnT2KCA" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_iy1EwA_kEei7rOrXcI2zXA" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']"/>
@@ -617,7 +617,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_9TJ08AflEei5x9BGnT2KCA" name="NothingToDo" tooltipText="Context Expression" incomingEdges="_p7kvQA_HEei7rOrXcI2zXA">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_9TJ08AflEei5x9BGnT2KCA" name="NothingToDo" tooltipText="Context Expression" incomingEdges="_DCj9oA_PEei7rOrXcI2zXA">
       <target xmi:type="senSoMod:ContextDescription" href="ExamplePrinterManagement.sensomod#//@node.5"/>
       <semanticElements xmi:type="senSoMod:ContextDescription" href="ExamplePrinterManagement.sensomod#//@node.5"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -661,14 +661,6 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_p7kvQA_HEei7rOrXcI2zXA" sourceNode="_HJ7XsAfkEei5x9BGnT2KCA" targetNode="_9TJ08AflEei5x9BGnT2KCA">
-      <target xmi:type="senSoMod:Context" href="ExamplePrinterManagement.sensomod#//@node.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_p7l9YA_HEei7rOrXcI2zXA" size="2" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_p7l9YQ_HEei7rOrXcI2zXA"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']"/>
-    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_qEFyEA_HEei7rOrXcI2zXA" sourceNode="_HJ7XsAfkEei5x9BGnT2KCA" targetNode="_jJH2UAstEeiiQ5i3MHgGDg">
       <target xmi:type="senSoMod:Context" href="ExamplePrinterManagement.sensomod#//@node.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_qEGZIA_HEei7rOrXcI2zXA" size="2" strokeColor="0,0,0">
@@ -682,6 +674,14 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_qxxXcA_HEei7rOrXcI2zXA" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_qxxXcQ_HEei7rOrXcI2zXA"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_DCj9oA_PEei7rOrXcI2zXA" sourceNode="_HJ7XsAfkEei5x9BGnT2KCA" targetNode="_9TJ08AflEei5x9BGnT2KCA">
+      <target xmi:type="senSoMod:Context" href="ExamplePrinterManagement.sensomod#//@node.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_DCj9oQ_PEei7rOrXcI2zXA" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_DCj9og_PEei7rOrXcI2zXA"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@edgeMappings[name='ContextDescRelation']"/>
     </ownedDiagramElements>
