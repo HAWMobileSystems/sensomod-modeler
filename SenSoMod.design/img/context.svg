@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export context.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="1.60207in" height="1.60207in"
+		viewBox="0 0 115.349 115.349" xml:space="preserve" color-interpolation-filters="sRGB" class="st3">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-dasharray:5.25,3.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group1-1" transform="translate(0.375,-0.375)" v:mID="1" v:groupContext="group">
+			<title>Tabelle.1</title>
+			<g id="group2-2" v:mID="2" v:groupContext="group">
+				<title>Tabelle.2</title>
+				<g id="shape3-3" v:mID="3" v:groupContext="shape">
+					<title>Tabelle.3</title>
+					<rect x="0" y="0.750003" width="114.599" height="114.599" rx="5.66929" ry="5.66929" class="st1"/>
+				</g>
+				<g id="shape5-5" v:mID="5" v:groupContext="shape" transform="translate(0,-80.8936)">
+					<title>Tabelle.5</title>
+					<path d="M0 115.35 L114.6 115.35" class="st2"/>
+				</g>
+			</g>
+			<g id="shape6-8" v:mID="6" v:groupContext="shape" transform="translate(5.91527E-13,-46.4677)">
+				<title>Tabelle.6</title>
+				<path d="M0 115.35 L114.6 115.35" class="st2"/>
+			</g>
+		</g>
+	</g>
+</svg>
