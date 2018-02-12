@@ -80,7 +80,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_context.png" tooltipExpression="Context" workspacePath="/SenSoMod.design/img/context.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_context.png" tooltipExpression="Context" workspacePath="/SenSoMod.design/img/context.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
