@@ -46,8 +46,8 @@ public class Handler extends AbstractHandler {
 			messageDialog.setMessage("Do you want generate Java files for\n" + selected + "\n into\n" + selectedDir);
 			returnCode = messageDialog.open();
 			if (returnCode == 32) {
-				XMLParser xmlparser = new XMLParser();
-				if (xmlparser.parseXML(selected, selectedDir)) {
+				SenSoMod2Java sensomod2java = new SenSoMod2Java();
+				if (sensomod2java.transform(selected, selectedDir)) {
 					MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_WORKING | SWT.OK);
 					messageDialog2.setText("Finished");
 					messageDialog2.setMessage("Java Files successfully generated in " + selectedDir);

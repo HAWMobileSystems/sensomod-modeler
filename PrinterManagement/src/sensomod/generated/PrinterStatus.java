@@ -9,17 +9,20 @@ public class PrinterStatus extends PhysicalSensor {
 	private Printer printer1 = new Printer("Room1", Printer.State.normal);
 	private Printer printer2 = new Printer("Room2", Printer.State.paperempty);
 	private Printer printer3 = new Printer("Room3", Printer.State.cartridgeempty);
+	public Printer printer = null;
 
 	public Printer output(String room) {
 		switch (room) {
 		case "Room1":
-			return printer1;
+			printer = printer1;
+			break;
 		case "Room2":
-			return printer2;
+			printer = printer2;
+			break;
 		case "Room3":
-			return printer3;
-		default:
-			return null;
+			printer = printer3;
+			break;
 		}
+		return printer;
 	}
 }

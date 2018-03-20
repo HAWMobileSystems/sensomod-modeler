@@ -1,35 +1,23 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JMenu;
-import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
-import javax.swing.Action;
-import javax.swing.BorderFactory;
-import javax.swing.event.MenuKeyListener;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
 
 import sensomod.generated.PrinterManagement;
-import sensomod.generated.PrinterManagementState;
-
-import javax.swing.event.MenuKeyEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
-import javax.swing.JSeparator;
-import javax.swing.ImageIcon;
-import java.awt.Color;
 
 public class GUI {
 
@@ -131,7 +119,6 @@ public class GUI {
 			public void actionPerformed(ActionEvent arg0) {
 				resetPrinterMangement();
 				labelLocation.setText("SSID_WlanRoom1");
-				labelPrinterStatus.setText(pm.output("WlanRoom1").state.toString());
 				switch (pm.output("WlanRoom1").state) {
 				case RefillPaperPrinter:
 					setButtonEnabled(mnPaper);
@@ -142,6 +129,7 @@ public class GUI {
 				default:
 					break;
 				}
+				labelPrinterStatus.setText(pm.printerstatus.printer.getState().toString());
 			}
 		});
 		btnPrinter1.setIcon(new ImageIcon(GUI.class.getResource("/img/printer.jpg")));
@@ -153,7 +141,6 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				resetPrinterMangement();
 				labelLocation.setText("SSID_WlanRoom2");
-				labelPrinterStatus.setText(pm.output("WlanRoom2").state.toString());
 				switch (pm.output("WlanRoom2").state) {
 				case RefillPaperPrinter:
 					setButtonEnabled(mnPaper);
@@ -165,6 +152,7 @@ public class GUI {
 				default:
 					break;
 				}
+				labelPrinterStatus.setText(pm.printerstatus.printer.getState().toString());
 			}
 		});
 		btnPrinter2.setIcon(new ImageIcon(GUI.class.getResource("/img/printer.jpg")));
@@ -178,7 +166,6 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				resetPrinterMangement();
 				labelLocation.setText("SSID_WlanRoom3");
-				labelPrinterStatus.setText(pm.output("WlanRoom3").state.toString());
 				switch (pm.output("WlanRoom3").state) {
 				case RefillPaperPrinter:
 					setButtonEnabled(mnPaper);
@@ -189,6 +176,8 @@ public class GUI {
 				default:
 					break;
 				}
+				labelPrinterStatus.setText(pm.printerstatus.printer.getState().toString());
+
 			}
 		});
 		panel_1.add(btnPrinter3);
@@ -198,7 +187,6 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				resetPrinterMangement();
 				labelLocation.setText("AnyWhereElse");
-				labelPrinterStatus.setText(pm.output("AnyWhereElse").state.toString());
 				switch (pm.output("AnyWhereElse").state) {
 				case RefillPaperPrinter:
 					setButtonEnabled(mnPaper);
@@ -209,11 +197,11 @@ public class GUI {
 				default:
 					break;
 				}
+
 			}
 		});
 		panel_1.add(btnAnywhereElse);
 	}
-
 
 	private void resetPrinterMangement() {
 		mnPaper.setEnabled(false);

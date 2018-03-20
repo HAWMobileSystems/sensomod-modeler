@@ -12,7 +12,7 @@ public class PrinterManagement extends Context {
 
 	private UserLocation userlocation = new UserLocation();
 
-	private PrinterStatus printerstatus = new PrinterStatus();
+	public PrinterStatus printerstatus = new PrinterStatus();
 	public PrinterManagementState pms = new PrinterManagementState();
 
 	public void decisionLogic() {

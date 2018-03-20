@@ -1,6 +1,7 @@
 package sensomod.javasourcecodegen.handlers;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -41,8 +42,8 @@ import com.github.javaparser.ast.type.VoidType;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
-public class XMLParser {
-	private static final Logger log = Logger.getLogger(XMLParser.class.getName());
+public class SenSoMod2Java {
+	private static final Logger log = Logger.getLogger(SenSoMod2Java.class.getName());
 	private FileHandler fileHandler;
 	public static final String PACKAGE = "sensomod.generated";
 	public static final QName TYPE_XSI = new QName("http://www.w3.org/2001/XMLSchema-instance", "type", "xsi");
@@ -58,7 +59,7 @@ public class XMLParser {
 	private boolean output = false;
 	private boolean type = false;
 
-	public boolean parseXML(String fileName, String targetDir) {
+	public boolean transform(String fileName, String targetDir) {
 		this.targetDir = targetDir;
 
 		// Logging
@@ -74,11 +75,6 @@ public class XMLParser {
 			e.printStackTrace();
 		}
 
-		// XML from .SenSoMod Files should be XML validated (instead of & or "" in
-		// Attribute there should be &amp; &quoute; )
-		// To convert & in &amp; you can uncomment the following line and comment the
-		// next
-		// String newfileName = validateAndCorrectXML(fileName);
 		String newfileName = fileName;
 		extractIDsFromNodes(newfileName);
 		mapRelationToClasses(newfileName);
@@ -135,6 +131,7 @@ public class XMLParser {
 							Collection<String> cs = relationMapping.get(className);
 							if (!cs.isEmpty()) {
 								for (String relation : cs) {
+									relation = relation.replaceAll("[^a-zA-Z0-9]", "").trim();
 									myClass.addField(relation, relation.toLowerCase(), Modifier.PRIVATE);
 								}
 							}
@@ -151,10 +148,9 @@ public class XMLParser {
 						method = myClass.addMethod("output", Modifier.PUBLIC);
 						Attribute typeAttr = startElement.getAttributeByName(new QName("name"));
 						String type = "Object";
-						//String arrayListType ="";
 						try {
 							type = typeAttr.getValue().replaceAll("[^a-zA-Z0-9]", "").trim();
-//							arrayListType = "ArrayList<" + type + ">";
+
 						} catch (Exception e) {
 							log.log(Level.SEVERE, e.getMessage(), e);
 						}
@@ -233,7 +229,6 @@ public class XMLParser {
 
 				}
 
-				// if Employee end element is reached, add employee object to list
 				if (xmlEvent.isEndElement()) {
 					EndElement endElement = xmlEvent.asEndElement();
 					if (endElement.getName().getLocalPart().equals("output")) {
@@ -274,10 +269,25 @@ public class XMLParser {
 	private void writeToDisk(CompilationUnit cu, String filename) {
 		LineComment lc = new LineComment("Use IDE to generate Constructor, Getters, Setters and toString methods");
 		cu.addOrphanComment(lc);
-		try (PrintWriter out = new PrintWriter(targetDir + "/" + filename + ".java")) {
+		String filePath = targetDir + "/" + filename + ".java";
+		File f = new File(filePath);
+		// Problem wenn Modellierer zwei Sprachelemente den selben Namen definiert
+		// gelöst durch: Existierende Dateien werden nicht überschrieben sondern der
+		// Dateiname mit einer zufälligen Zahl ergänzt
+		if (f.exists() && !f.isDirectory()) {
+			// Superklassen sollen nicht zusätzlich erzeugt werden
+			if (filename.equals("Context") || filename.equals("ContextDescription") || filename.equals("PhysicalSensor")
+					|| filename.equals("VirtualSensor") || filename.equals("ComputedSensor")) {
+				log.info(filename + " already exists");
+			} else {
+				int random = (int) (Math.random() * 100);
+				filePath = filePath.replace(".java", random + ".java");
+			}
+
+		}
+		try (PrintWriter out = new PrintWriter(filePath)) {
 			out.println(cu);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 			log.log(Level.SEVERE, e.getMessage(), e);
 
 		}
@@ -296,25 +306,6 @@ public class XMLParser {
 		typeElementClassCU = new CompilationUnit();
 		typeElementClassCU.setPackageDeclaration(PACKAGE);
 		typeElementClass = new ClassOrInterfaceDeclaration();
-	}
-
-	// Ersetzt alle & mit &amp; Sirius stellt kein gültiges XML-File zur Verfügung
-	private String validateAndCorrectXML(String fileName) {
-		String newFileName = fileName + "_validated";
-		try (BufferedReader br = new BufferedReader(new FileReader(fileName));
-				FileWriter fw = new FileWriter(newFileName);
-				PrintWriter pw = new PrintWriter(fw)) {
-			String line;
-			while ((line = br.readLine()) != null) {
-				String newline = line.replaceAll("&", "&amp;");
-				pw.println(newline);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			log.log(Level.SEVERE, e.getMessage(), e);
-
-		}
-		return newFileName;
 	}
 
 	// Nummeriert die Nodes von 0 - x durch und speichert sie in eine ArrayList
@@ -420,6 +411,7 @@ public class XMLParser {
 			log.log(Level.SEVERE, e.getMessage(), e);
 		}
 		log.info(nodeNumbers.toString());
+
 	}
 
 }
