@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/SenSoMod.feature_1.0.0.201802121205.jar" id="SenSoMod.feature" version="1.0.0.201802121205">
+   <feature url="features/SenSoMod.feature_1.0.0.201803201153.jar" id="SenSoMod.feature" version="1.0.0.201803201153">
       <category name="SenSoMod"/>
    </feature>
    <category-def name="SenSoMod" label="SenSoMod"/>
