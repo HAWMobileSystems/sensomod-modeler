@@ -44,7 +44,7 @@
         </edgeMappings>
         <containerMappings name="ContextContainer" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::Context">
           <subNodeMappings name="Decision Logic" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:decisionlogic" domainClass="senSoMod::DecisionLogic">
-            <style xsi:type="style:SquareDescription" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="20" height="2">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" width="33" height="15">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -53,14 +53,14 @@
           <subContainerMappings name="Output" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:output" domainClass="senSoMod::Output">
             <subContainerMappings name="Type" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:type" domainClass="senSoMod::Type">
               <subNodeMappings name="Element" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:element" domainClass="senSoMod::Element">
-                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="5" height="2">
+                <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 </style>
               </subNodeMappings>
               <subNodeMappings name="EnumElement" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EnumElement']" semanticCandidatesExpression="feature:enumelement" domainClass="senSoMod::EnumElement">
-                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="feature:valuesCommaSep" labelPosition="node" resizeKind="NSEW" width="5" height="2">
+                <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:valuesCommaSep" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -80,14 +80,14 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_context.png" tooltipExpression="Context" sizeComputationExpression="10" workspacePath="/SenSoMod.design/img/context.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_context.png" tooltipExpression="Context" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/context.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </containerMappings>
         <containerMappings name="ContextDescNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::ContextDescription">
           <subNodeMappings name="Context Expression" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:contextexpression" domainClass="senSoMod::ContextExpression">
-            <style xsi:type="style:SquareDescription" labelSize="24" showIcon="false" labelPosition="node" resizeKind="NSEW" width="20" height="2">
+            <style xsi:type="style:SquareDescription" labelSize="24" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" width="33" height="15">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -122,19 +122,19 @@
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT" widthComputationExpression="30" heightComputationExpression="20">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" tooltipExpression="Physical Sensor" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" tooltipExpression="Physical Sensor" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/physical_atomic_sensor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.multiple=true">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/physical_atomic_sensor_multi_instances.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_physical_atomic_sensor.png" tooltipExpression="Computed Sensor" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/physical_atomic_sensor_multi_instances.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -164,19 +164,19 @@
                 <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="24" iconPath="/SenSoMod.design/img/icon_output.png" labelAlignment="LEFT" widthComputationExpression="30" heightComputationExpression="20">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png" tooltipExpression="Virtual Sensor" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png" tooltipExpression="Virtual Sensor" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.multiple=true">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor_multi_instances.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_virtual_atomic_sensor.png" tooltipExpression="Computed Sensor" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/virtual_atomic_sensor_multi_instances.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -184,7 +184,7 @@
         </containerMappings>
         <containerMappings name="ComputedSensorNode" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" domainClass="senSoMod::ComputedSensor">
           <subNodeMappings name="Decision Logic" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:decisionlogic" domainClass="senSoMod::DecisionLogic">
-            <style xsi:type="style:SquareDescription" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="20" height="2">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" width="33" height="15">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -193,14 +193,14 @@
           <subContainerMappings name="Output" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:output" domainClass="senSoMod::Output">
             <subContainerMappings name="Type" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:type" domainClass="senSoMod::Type">
               <subNodeMappings name="Element" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" semanticCandidatesExpression="feature:element" domainClass="senSoMod::Element">
-                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="5" height="2">
+                <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 </style>
               </subNodeMappings>
               <subNodeMappings name="EnumElement" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EnumElement']" semanticCandidatesExpression="feature:enumelement" domainClass="senSoMod::EnumElement">
-                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="5" height="2">
+                <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:valuesCommaSep" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -220,12 +220,12 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/computed_sensor.svg">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Context" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/computed_sensor.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.multiple=true">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" workspacePath="/SenSoMod.design/img/computed_sensor_multi_instances.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="24" iconPath="/SenSoMod.design/img/icon_computed_sensor.png" tooltipExpression="Computed Sensor" sizeComputationExpression="-1" workspacePath="/SenSoMod.design/img/computed_sensor_multi_instances.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -245,11 +245,23 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Context" referenceName="node">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::DecisionLogic" referenceName="decisionlogic"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Context" referenceName="node" variableName="newContext">
+                  <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']" containerViewExpression="var:containerView" variableName="newContextView">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContext">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output" variableName="output">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']" containerViewExpression="var:newContextView" variableName="newOutputView">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContext">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::DecisionLogic" referenceName="decisionlogic" variableName="decisionLogic">
+                              <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']" containerViewExpression="var:newContextView" variableName="newDecisionLogicView">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContext.setLocationOfContext(newContextView, newOutputView, newDecisionLogicView)"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
@@ -261,8 +273,16 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextDescription" referenceName="node">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextExpression" referenceName="contextexpression"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextDescription" referenceName="node" variableName="newContextDescription">
+                  <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']" containerViewExpression="var:containerView" variableName="newContextDescView">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContextDescription">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextExpression" referenceName="contextexpression" variableName="contextexpression">
+                        <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']" containerViewExpression="var:newContextDescView" variableName="newContextExpressionView">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContextDescription.setLocationOfContextDesc(newContextDescView, newContextExpressionView)"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -272,10 +292,17 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::PhysicalSensor" referenceName="node">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::PhysicalSensor" referenceName="node" variableName="newPhysicalSensor">
+                  <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']" containerViewExpression="var:containerView" variableName="newPhysicalSensorView">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newPhysicalSensor">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output" variableName="output">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']" containerViewExpression="var:newPhysicalSensorView" variableName="newOutputView">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newPhysicalSensor.setLocationOfPhysicalSensor(newPhysicalSensorView,newOutputView)"/>
+                        </subModelOperations>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
@@ -287,10 +314,17 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::VirtualSensor" referenceName="node">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::VirtualSensor" referenceName="node" variableName="newVirtualSensor">
+                  <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']" containerViewExpression="var:containerView" variableName="newVirtualSensorView">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newVirtualSensor">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output" variableName="output">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']" containerViewExpression="var:newVirtualSensorView" variableName="newOutputView">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newVirtualSensor.setLocationOfVirtualSensor(newVirtualSensorView,newOutputView)"/>
+                        </subModelOperations>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
@@ -302,11 +336,23 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ComputedSensor" referenceName="node">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::DecisionLogic" referenceName="decisionlogic"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ComputedSensor" referenceName="node" variableName="newContext">
+                  <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']" containerViewExpression="var:containerView" variableName="newContextView">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContext">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Output" referenceName="output" variableName="output">
+                        <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']" containerViewExpression="var:newContextView" variableName="newOutputView">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newContext">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::DecisionLogic" referenceName="decisionlogic" variableName="decisionLogic">
+                              <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']" containerViewExpression="var:newContextView" variableName="newDecisionLogicView">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContext.setLocationOfComputedSensor(newContextView, newOutputView, newDecisionLogicView)"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Type" referenceName="type">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
+                        </subModelOperations>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
@@ -378,7 +424,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Features">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Decision Logic" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subNodeMappings[name='Decision%20Logic'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']" iconPath="/SenSoMod.design/img/icon_decision_logic.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Decision Logic" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']" iconPath="/SenSoMod.design/img/icon_decision_logic.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -392,7 +438,7 @@
               <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::ContextExpression" referenceName="contextexpression"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Output" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']" iconPath="/SenSoMod.design/img/icon_output.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Output" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']" iconPath="/SenSoMod.design/img/icon_output.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -401,7 +447,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Type" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']" iconPath="/SenSoMod.design/img/icon_type.png">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Type" containerMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']" iconPath="/SenSoMod.design/img/icon_type.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -410,14 +456,14 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Element" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element']" iconPath="/SenSoMod.design/img/icon_element.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Element" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='Element']" iconPath="/SenSoMod.design/img/icon_element.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="senSoMod::Element" referenceName="element"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="EnumElement" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement']" iconPath="/SenSoMod.design/img/icon_element.png">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="EnumElement" nodeMappings="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement']" iconPath="/SenSoMod.design/img/icon_element.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
