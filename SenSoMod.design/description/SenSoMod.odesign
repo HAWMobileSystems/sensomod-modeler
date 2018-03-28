@@ -2,7 +2,7 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="SenSoMod" version="12.0.0.2017041100">
   <ownedViewpoints name="SenSoMod" modelFileExtension="sensomod">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="diagram" domainClass="senSoMod::Modell" enablePopupBars="true">
-      <metamodel href="file:/C:/Users/florian/Downloads/ObeoDesigner-Community/workspace/SenSoMod/model/senSoMod.ecore#/"/>
+      <metamodel href="http://www.example.org/senSoMod#/"/>
       <validationSet name="Validate diagram">
         <ownedRules xsi:type="validation:SemanticValidationRule" name="NodeNoName" level="ERROR" message="Node has no Name set" targetClass="senSoMod::Node">
           <audits auditExpression="aql:self.oclAsType(senSoMod::Node).name.toString().size()>0"/>
