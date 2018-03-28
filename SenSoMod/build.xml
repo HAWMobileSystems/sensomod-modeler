@@ -7,7 +7,7 @@
 	<property name="basearch" value="${arch}"/>
 	<property name="basenl" value="${nl}"/>
 	<property name="bundleId" value="SenSoMod"/>
-	<property name="bundleVersion" value="0.1.0.201802121205"/>
+	<property name="bundleVersion" value="0.1.0.201803201153"/>
 	<property name="p2.publishonerror" value="false"/>
 
 	<!-- Compiler settings. -->
@@ -50,7 +50,7 @@
 			<isset property="buildTempFolder"/>
 		</condition>
 		<property name="pluginTemp" value="${basedir}"/>
-		<condition property="build.result.folder" value="${pluginTemp}/SenSoMod_0.1.0.201802121205"		>
+		<condition property="build.result.folder" value="${pluginTemp}/SenSoMod_0.1.0.201803201153"		>
 			<isset property="buildTempFolder"/>
 		</condition>
 		<property name="build.result.folder" value="${basedir}"/>
@@ -80,7 +80,7 @@
 		<antcall target="gather.bin.parts">
 			<param name="destination.temp.folder" value="${temp.folder}/"/>
 		</antcall>
-		<jar destfile="${plugin.destination}/SenSoMod_0.1.0.201802121205.jar" basedir="${temp.folder}/SenSoMod_0.1.0.201802121205" filesetmanifest="merge"/>
+		<jar destfile="${plugin.destination}/SenSoMod_0.1.0.201803201153.jar" basedir="${temp.folder}/SenSoMod_0.1.0.201803201153" filesetmanifest="merge"/>
 		<delete dir="${temp.folder}"/>
 	</target>
 
@@ -96,7 +96,7 @@
 			<pathelement path="../../plugins/org.eclipse.core.runtime_3.13.0.v20170207-1030.jar"/>
 			<pathelement path="../../plugins/javax.inject_1.0.0.v20091030.jar"/>
 			<pathelement path="../../plugins/org.eclipse.equinox.common_3.9.0.v20170207-1454.jar"/>
-			<pathelement path="../../plugins/org.eclipse.core.jobs_3.9.1.v20170714-0547.jar"/>
+			<pathelement path="../../plugins/org.eclipse.core.jobs_3.9.2.v20171030-1027.jar"/>
 			<pathelement path="../../plugins/org.eclipse.equinox.registry_3.7.0.v20170222-1344.jar"/>
 			<pathelement path="../../plugins/org.eclipse.equinox.preferences_3.7.0.v20170126-2132.jar"/>
 			<pathelement path="../../plugins/org.eclipse.core.contenttype_3.6.0.v20170207-1037.jar"/>
@@ -113,7 +113,7 @@
 			<pathelement path="../../plugins/org.eclipse.core.filesystem_1.7.0.v20170406-1337.jar"/>
 			<pathelement path="../../plugins/org.eclipse.core.filesystem.win32.x86_64_1.4.0.v20140124-1940.jar"/>
 			<pathelement path="bin"/>
-			<pathelement path="${build.result.folder}/../SenSoMod_0.1.0.201802121205/bin"/>
+			<pathelement path="${build.result.folder}/../SenSoMod_0.1.0.201803201153/bin"/>
 		</path>
 		<!-- compile the source code -->
 		<javac destdir="${build.result.folder}/@dot" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}"		>
@@ -159,8 +159,8 @@
 	</target>
 
 	<target name="checkCompilationResults" if="compilation.error.occured">
-		<echo file="${compilation.problem.marker}" message="SenSoMod_0.1.0.201802121205${line.separator}compilation.error.occured=${compilation.error.occured}"/>
-		<eclipse.logCompileError log="${compilation.prereq.log}" bundle="SenSoMod_0.1.0.201802121205">
+		<echo file="${compilation.problem.marker}" message="SenSoMod_0.1.0.201803201153${line.separator}compilation.error.occured=${compilation.error.occured}"/>
+		<eclipse.logCompileError log="${compilation.prereq.log}" bundle="SenSoMod_0.1.0.201803201153">
 		</eclipse.logCompileError>
 	</target>
 
@@ -170,7 +170,7 @@
 	</target>
 
 	<target name="publish.bin.parts" depends="init" if="p2.publish.parts" unless="compilation.problem.marker.exists">
-		<mkdir dir="${build.result.folder}/SenSoMod_0.1.0.201802121205"/>
+		<mkdir dir="${build.result.folder}/SenSoMod_0.1.0.201803201153"/>
 		<copy todir="${build.result.folder}" failonerror="true" overwrite="true">
 			<fileset dir="${basedir}">
 				<include name="META-INF/MANIFEST.MF"/>
@@ -178,7 +178,7 @@
 				<include name="fragment.xml"/>
 			</fileset>
 		</copy>
-		<eclipse.versionReplacer path="${build.result.folder}" version="0.1.0.201802121205"/>
+		<eclipse.versionReplacer path="${build.result.folder}" version="0.1.0.201803201153"/>
 		<antcall target="apitools.generation">
 			<param name="projectLocation" value="${basedir}"/>
 			<param name="binary.folders" value="${build.result.folder}/@dot;C:\Users\florian\Downloads\ObeoDesigner-Community\workspace\SenSoMod/bin"/>
@@ -195,13 +195,13 @@
 	</target>
 
 	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
-		<mkdir dir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205"/>
-		<copy todir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205" failonerror="true" overwrite="false">
+		<mkdir dir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153"/>
+		<copy todir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153" failonerror="true" overwrite="false">
 			<fileset dir="${build.result.folder}/@dot">
 				<include name="**"/>
 			</fileset>
 		</copy>
-		<copy todir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205" failonerror="true" overwrite="true">
+		<copy todir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153" failonerror="true" overwrite="true">
 			<fileset dir="${basedir}">
 				<include name="model/"/>
 				<include name="META-INF/"/>
@@ -209,12 +209,12 @@
 				<include name="plugin.properties"/>
 			</fileset>
 		</copy>
-		<eclipse.versionReplacer path="${destination.temp.folder}/SenSoMod_0.1.0.201802121205" version="0.1.0.201802121205"/>
+		<eclipse.versionReplacer path="${destination.temp.folder}/SenSoMod_0.1.0.201803201153" version="0.1.0.201803201153"/>
 		<antcall target="apitools.generation">
 			<param name="projectLocation" value="${basedir}"/>
 			<param name="binary.folders" value="${build.result.folder}/@dot;C:\Users\florian\Downloads\ObeoDesigner-Community\workspace\SenSoMod/bin"/>
 			<param name="projectName" value="${bundleId}_${bundleVersion}"/>
-			<param name="target.folder" value="${destination.temp.folder}/SenSoMod_0.1.0.201802121205"/>
+			<param name="target.folder" value="${destination.temp.folder}/SenSoMod_0.1.0.201803201153"/>
 		</antcall>
 	</target>
 
@@ -222,10 +222,10 @@
 	</target>
 
 	<target name="gather.sources" depends="init" if="destination.temp.folder">
-		<mkdir dir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205"/>
-		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205" failonerror="false" overwrite="false"/>
+		<mkdir dir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153"/>
+		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153" failonerror="false" overwrite="false"/>
 		<antcall target="copy.src.includes">
-			<param name="source.destination.folder" value="${destination.temp.folder}/SenSoMod_0.1.0.201802121205"/>
+			<param name="source.destination.folder" value="${destination.temp.folder}/SenSoMod_0.1.0.201803201153"/>
 		</antcall>
 	</target>
 
@@ -242,8 +242,8 @@
 	</target>
 
 	<target name="gather.logs" depends="init" if="destination.temp.folder">
-		<mkdir dir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205"/>
-		<copy todir="${destination.temp.folder}/SenSoMod_0.1.0.201802121205" failonerror="false" overwrite="false">
+		<mkdir dir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153"/>
+		<copy todir="${destination.temp.folder}/SenSoMod_0.1.0.201803201153" failonerror="false" overwrite="false">
 			<fileset dir="${build.result.folder}">
 				<include name="@dot${logExtension}"/>
 			</fileset>
@@ -253,8 +253,8 @@
 	<target name="clean" depends="init" description="Clean the plug-in: SenSoMod of all the zips, jars and logs created.">
 		<delete dir="${build.result.folder}/@dot"/>
 		<delete file="${build.result.folder}/src.zip"/>
-		<delete file="${plugin.destination}/SenSoMod_0.1.0.201802121205.jar"/>
-		<delete file="${plugin.destination}/SenSoMod_0.1.0.201802121205.zip"/>
+		<delete file="${plugin.destination}/SenSoMod_0.1.0.201803201153.jar"/>
+		<delete file="${plugin.destination}/SenSoMod_0.1.0.201803201153.zip"/>
 		<delete dir="${temp.folder}"/>
 		<delete file="${compilation.problem.marker}" quiet="true"/>
 	</target>
@@ -280,7 +280,7 @@
 				<include name="**/*.bin${logExtension}"/>
 			</fileset>
 		</delete>
-		<zip destfile="${plugin.destination}/SenSoMod_0.1.0.201802121205.zip" basedir="${temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+		<zip destfile="${plugin.destination}/SenSoMod_0.1.0.201803201153.zip" basedir="${temp.folder}" filesonly="true" whenempty="skip" update="false"/>
 		<delete dir="${temp.folder}"/>
 	</target>
 
