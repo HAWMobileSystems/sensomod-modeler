@@ -1,0 +1,16 @@
+Steps:
+1. GitHub Project Download
+2. Obeo öffnen
+3. Projekte importieren: (SenSoMod und SenSoMod.SourceCodeGenerator)
+3a. Ordner src anlegen
+4. JavaParser Lib fixen (von Lib Ordner in Plugins kopieren)
+5. Obeo neustarten
+6. Editoren generieren (GenModel)
+7. Run-Config anlegen (Name SenSoMod Modeler)
+8. Project importieren (design, feature, update, example)
+9. Example öffnen!
+
+
+10. Wenn etwas geändert wird, kann mittels Feature die Update Site erneuert werden und diese dann Export werden,
+um den Modeler in einen generischen Obeo Designer oder Eclipse zu installieren
+
