@@ -1,5 +1,7 @@
 The SenSoMod-Modeler is published under the following licence:
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
 More information about the SenSoMod-Modeler have been published here:
 Dörndorfer, Julian; Seel, Christian; Hilpoltsteiner, Daniel (2018): SenSoMod – A modeling language for context-aware mobile applications. In: Paul D, Burkhardt F, Peter N, Lin X (eds) Multikonferenz Wirtschaftsinformatik (MKWI): Data Driven X - Turning Data into Value, Band 4, S.1435–1446 Link
