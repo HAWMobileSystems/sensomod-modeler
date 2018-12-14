@@ -102,6 +102,8 @@ public class SenSoMod2Java {
 							BlockStmt block = new BlockStmt();
 							cons.setBody(block);
 							myClass.addMember(cons);
+							log.info("myClass " + myClass.toString());
+
 
 							try { // Wert Multiple ermitteln
 								if (classType.toLowerCase().contains("sensor")) {
@@ -112,7 +114,8 @@ public class SenSoMod2Java {
 									NameExpr namexpr2 = new NameExpr("multiple = " + multiple);
 									block.addStatement(namexpr2);
 								}
-							} catch (NullPointerException e) {
+							} catch (Exception e) {
+								log.log(Level.SEVERE, e.getMessage(), e);
 								log.info(className + " has multiple not set");
 							}
 
@@ -246,7 +249,7 @@ public class SenSoMod2Java {
 				}
 			}
 
-		} catch (FileNotFoundException | XMLStreamException | NullPointerException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			log.log(Level.SEVERE, e.getMessage(), e);
 		}
