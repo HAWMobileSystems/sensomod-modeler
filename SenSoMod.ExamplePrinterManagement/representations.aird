@@ -95,7 +95,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mNnusgfjEei5x9BGnT2KCA"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_mNnHoQfjEei5x9BGnT2KCA" fontName="Segoe UI" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mNnHogfjEei5x9BGnT2KCA" x="106" y="335" width="242" height="151"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mNnHogfjEei5x9BGnT2KCA" x="106" y="335" width="330" height="150"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_-l7LwQfiEei5x9BGnT2KCA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_-l7LwgfiEei5x9BGnT2KCA"/>
@@ -164,7 +164,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RhyRcgfmEei5x9BGnT2KCA"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_RhxqYQfmEei5x9BGnT2KCA" fontName="Segoe UI" fontHeight="24"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RhxqYgfmEei5x9BGnT2KCA" x="57" y="95" width="343" height="120"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RhxqYgfmEei5x9BGnT2KCA" x="57" y="95" width="330" height="150"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_uTMcxQflEei5x9BGnT2KCA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_uTMcxgflEei5x9BGnT2KCA"/>
@@ -184,7 +184,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Oo8cFAfmEei5x9BGnT2KCA"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_Oo71AQfmEei5x9BGnT2KCA" fontName="Segoe UI" fontHeight="24"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Oo71AgfmEei5x9BGnT2KCA" x="62" y="107" width="312" height="120"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Oo71AgfmEei5x9BGnT2KCA" x="62" y="107" width="330" height="150"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_9TTl8AflEei5x9BGnT2KCA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_9TTl8QflEei5x9BGnT2KCA"/>
@@ -204,7 +204,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jJgQ0gstEeiiQ5i3MHgGDg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_jJeboQstEeiiQ5i3MHgGDg" fontName="Segoe UI" fontHeight="24"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jJebogstEeiiQ5i3MHgGDg" x="76" y="92" width="315" height="153"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jJebogstEeiiQ5i3MHgGDg" x="76" y="92" width="330" height="150"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_jJaKMQstEeiiQ5i3MHgGDg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_jJaKMgstEeiiQ5i3MHgGDg"/>
@@ -253,7 +253,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E_LsIinKEeiqE8mhzE9XPg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_E_GMkSnKEeiqE8mhzE9XPg" fontName="Segoe UI" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E_GMkinKEeiqE8mhzE9XPg" x="21" y="377" width="556" height="216"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E_GMkinKEeiqE8mhzE9XPg" x="21" y="377" width="330" height="150"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_E--QwSnKEeiqE8mhzE9XPg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_E--QwinKEeiqE8mhzE9XPg"/>
@@ -370,7 +370,7 @@
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_qOmtUAfiEei5x9BGnT2KCA">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_qOmtUAfiEei5x9BGnT2KCA" width="30" height="20">
         <target xmi:type="senSoMod:Output" href="ExamplePrinterManagement.sensomod#//@node.0/@output"/>
         <semanticElements xmi:type="senSoMod:Output" href="ExamplePrinterManagement.sensomod#//@node.0/@output"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -404,7 +404,7 @@
         </ownedDiagramElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-l2TQAfiEei5x9BGnT2KCA" name="UserLocation" tooltipText="Computed Sensor" outgoingEdges="_E-hk0CnKEeiqE8mhzE9XPg" incomingEdges="_9z3nQAfjEei5x9BGnT2KCA">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-l2TQAfiEei5x9BGnT2KCA" name="UserLocation" tooltipText="Context" outgoingEdges="_E-hk0CnKEeiqE8mhzE9XPg" incomingEdges="_9z3nQAfjEei5x9BGnT2KCA">
       <target xmi:type="senSoMod:ComputedSensor" href="ExamplePrinterManagement.sensomod#//@node.1"/>
       <semanticElements xmi:type="senSoMod:ComputedSensor" href="ExamplePrinterManagement.sensomod#//@node.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -436,26 +436,26 @@
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']"/>
-          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_oRWg8AsYEeiOVO8go6sOzA" name="Location" width="5" height="2" resizeKind="NSEW">
+          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_oRWg8AsYEeiOVO8go6sOzA" name="NearbyRoom1, NearbyRoom2, Unknown" width="5" height="2" resizeKind="NSEW">
             <target xmi:type="senSoMod:EnumElement" href="ExamplePrinterManagement.sensomod#//@node.1/@output/@type.0/@enumelement.0"/>
             <semanticElements xmi:type="senSoMod:EnumElement" href="ExamplePrinterManagement.sensomod#//@node.1/@output/@type.0/@enumelement.0"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_oRXIAAsYEeiOVO8go6sOzA" labelSize="12" showIcon="false" labelPosition="node" width="5" height="2" color="255,255,255">
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_oRXIAAsYEeiOVO8go6sOzA" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
               <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement']/@style"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement']"/>
           </ownedDiagramElements>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_mNhoEAfjEei5x9BGnT2KCA" name="if(SSID==&quot;WlanRoom1&quot;)&#xD;&#xA; {location=&quot;NearbyRoom1&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom2&quot;)&#xD;&#xA; {location=&quot;NearbyRoom2&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom3&quot;)&#xD;&#xA; {location=&quot;NearbyRoom3&quot;}&#xD;&#xA;else&#xD;&#xA; {location=&quot;Unknown&quot;}" width="20" height="2" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_mNhoEAfjEei5x9BGnT2KCA" name="if(SSID==&quot;WlanRoom1&quot;)&#xD;&#xA; {location=&quot;NearbyRoom1&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom2&quot;)&#xD;&#xA; {location=&quot;NearbyRoom2&quot;}&#xD;&#xA;else if(SSID==&quot;WlanRoom3&quot;)&#xD;&#xA; {location=&quot;NearbyRoom3&quot;}&#xD;&#xA;else&#xD;&#xA; {location=&quot;Unknown&quot;}" width="33" height="15" resizeKind="NSEW">
         <target xmi:type="senSoMod:DecisionLogic" href="ExamplePrinterManagement.sensomod#//@node.1/@decisionlogic"/>
         <semanticElements xmi:type="senSoMod:DecisionLogic" href="ExamplePrinterManagement.sensomod#//@node.1/@decisionlogic"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_mNhoEQfjEei5x9BGnT2KCA" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" labelPosition="node" width="20" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_mNhoEQfjEei5x9BGnT2KCA" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="33" height="15" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subNodeMappings[name='Decision%20Logic']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']/@subNodeMappings[name='Decision%20Logic']"/>
@@ -479,7 +479,7 @@
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_glB5EAfkEei5x9BGnT2KCA">
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_glB5EAfkEei5x9BGnT2KCA" width="30" height="20">
         <target xmi:type="senSoMod:Output" href="ExamplePrinterManagement.sensomod#//@node.3/@output"/>
         <semanticElements xmi:type="senSoMod:Output" href="ExamplePrinterManagement.sensomod#//@node.3/@output"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -534,13 +534,13 @@
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Rhq8sAfmEei5x9BGnT2KCA" name="PrinterManagement = &quot;Refill Paper Printer X&quot;" width="20" height="2" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Rhq8sAfmEei5x9BGnT2KCA" name="PrinterManagement = &quot;Refill Paper Printer X&quot;" width="33" height="15" resizeKind="NSEW">
         <target xmi:type="senSoMod:ContextExpression" href="ExamplePrinterManagement.sensomod#//@node.4/@contextexpression"/>
         <semanticElements xmi:type="senSoMod:ContextExpression" href="ExamplePrinterManagement.sensomod#//@node.4/@contextexpression"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_Rhq8sQfmEei5x9BGnT2KCA" labelSize="24" showIcon="false" labelPosition="node" width="20" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_Rhq8sQfmEei5x9BGnT2KCA" labelSize="24" showIcon="false" labelPosition="node" width="33" height="15" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
@@ -556,13 +556,13 @@
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Oo1HUAfmEei5x9BGnT2KCA" name="PrinterManagement =&quot;Nothing to do&quot;" width="20" height="2" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Oo1HUAfmEei5x9BGnT2KCA" name="PrinterManagement =&quot;Nothing to do&quot;" width="33" height="15" resizeKind="NSEW">
         <target xmi:type="senSoMod:ContextExpression" href="ExamplePrinterManagement.sensomod#//@node.5/@contextexpression"/>
         <semanticElements xmi:type="senSoMod:ContextExpression" href="ExamplePrinterManagement.sensomod#//@node.5/@contextexpression"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_Oo1uYAfmEei5x9BGnT2KCA" labelSize="24" showIcon="false" labelPosition="node" width="20" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_Oo1uYAfmEei5x9BGnT2KCA" labelSize="24" showIcon="false" labelPosition="node" width="33" height="15" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
@@ -578,13 +578,13 @@
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_jJKSkAstEeiiQ5i3MHgGDg" name="PrinterManagement = &quot;Order Cartridge for Printer X&quot;" width="20" height="2" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_jJKSkAstEeiiQ5i3MHgGDg" name="PrinterManagement = &quot;Order Cartridge for Printer X&quot;" width="33" height="15" resizeKind="NSEW">
         <target xmi:type="senSoMod:ContextExpression" href="ExamplePrinterManagement.sensomod#//@node.6/@contextexpression"/>
         <semanticElements xmi:type="senSoMod:ContextExpression" href="ExamplePrinterManagement.sensomod#//@node.6/@contextexpression"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_jJKSkQstEeiiQ5i3MHgGDg" labelSize="24" showIcon="false" labelPosition="node" width="20" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_jJKSkQstEeiiQ5i3MHgGDg" labelSize="24" showIcon="false" labelPosition="node" width="33" height="15" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
@@ -623,20 +623,20 @@
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_E-CcoSnKEeiqE8mhzE9XPg" labelSize="12" showIcon="false" labelPosition="node" width="5" height="2" color="255,255,255">
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_E-CcoSnKEeiqE8mhzE9XPg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
               <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement']/@style"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Output']/@subContainerMappings[name='Type']/@subNodeMappings[name='EnumElement']"/>
           </ownedDiagramElements>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_E-DDsCnKEeiqE8mhzE9XPg" name="if (UserLocation==NearbyRoom1 &amp;&amp;  Printer.ID == Room1 &amp;&amp; Printer.State != normal)&#xD;&#xA; { if(Printer.State == cartridgeempty) &#xD;&#xA;  {PrinterMangementOutput = orderCartidgePrinter1}&#xD;&#xA; { if(Printer.State == paperEmpty) &#xD;&#xA;  {PrinterMangementOutput = RefillPaperPrinter1}&#xD;&#xA;if (UserLocation==NearbyRoom2 &amp;&amp;  Printer.ID == Room2 &amp;&amp; Printer.State != normal)&#xD;&#xA; { if(Printer.State == cartridgeempty) &#xD;&#xA;  {PrinterMangementOutput = orderCartidgePrinter2}&#xD;&#xA; { if(Printer.State == paperEmpty) &#xD;&#xA;  {PrinterMangementOutput = RefillPaperPrinter2}&#xD;&#xA;else &#xD;&#xA; {PrinterMangementOutput = nothingToDo}&#xD;&#xA;&#xD;&#xA;" width="20" height="2" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_E-DDsCnKEeiqE8mhzE9XPg" name="if (UserLocation==NearbyRoom1 &amp;&amp;  Printer.ID == Room1 &amp;&amp; Printer.State != normal)&#xD;&#xA; { if(Printer.State == cartridgeempty) &#xD;&#xA;  {PrinterMangementOutput = orderCartidgePrinter1}&#xD;&#xA; { if(Printer.State == paperEmpty) &#xD;&#xA;  {PrinterMangementOutput = RefillPaperPrinter1}&#xD;&#xA;if (UserLocation==NearbyRoom2 &amp;&amp;  Printer.ID == Room2 &amp;&amp; Printer.State != normal)&#xD;&#xA; { if(Printer.State == cartridgeempty) &#xD;&#xA;  {PrinterMangementOutput = orderCartidgePrinter2}&#xD;&#xA; { if(Printer.State == paperEmpty) &#xD;&#xA;  {PrinterMangementOutput = RefillPaperPrinter2}&#xD;&#xA;else &#xD;&#xA; {PrinterMangementOutput = nothingToDo}&#xD;&#xA;&#xD;&#xA;" width="33" height="15" resizeKind="NSEW">
         <target xmi:type="senSoMod:DecisionLogic" href="ExamplePrinterManagement.sensomod#//@node.2/@decisionlogic"/>
         <semanticElements xmi:type="senSoMod:DecisionLogic" href="ExamplePrinterManagement.sensomod#//@node.2/@decisionlogic"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_E-DqwCnKEeiqE8mhzE9XPg" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" labelPosition="node" width="20" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_E-DqwCnKEeiqE8mhzE9XPg" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="33" height="15" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']"/>
