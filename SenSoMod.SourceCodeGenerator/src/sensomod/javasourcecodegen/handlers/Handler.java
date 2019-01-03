@@ -56,7 +56,7 @@ public class Handler extends AbstractHandler {
 						} else {
 							MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_ERROR | SWT.OK);
 							messageDialog2.setText("ERROR");
-							messageDialog2.setMessage("Could not generate Java Files in " + selectedDir);
+							messageDialog2.setMessage("Could not generate Java Files!\nHave a look in the log file under " + selectedDir + "\n");
 							messageDialog2.open();
 						}					
 					}

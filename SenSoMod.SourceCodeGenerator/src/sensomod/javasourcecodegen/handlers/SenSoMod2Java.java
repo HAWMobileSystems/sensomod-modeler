@@ -98,6 +98,7 @@ public class SenSoMod2Java {
 							} catch (Exception e) {
 								log.log(Level.SEVERE, e.getMessage(), e);
 								log.info(className + " has multiple not set");
+								return false;
 							}
 
 							log.info("classType " + classType);
@@ -137,6 +138,7 @@ public class SenSoMod2Java {
 
 						} catch (Exception e) {
 							log.log(Level.SEVERE, e.getMessage(), e);
+							return false;
 						}
 						method.setType(type);
 						// Erzeugt Klasse für Type z.b. Router
@@ -233,6 +235,7 @@ public class SenSoMod2Java {
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.log(Level.SEVERE, e.getMessage(), e);
+			return false;
 		}
 		fileHandler.close();
 		return true;
