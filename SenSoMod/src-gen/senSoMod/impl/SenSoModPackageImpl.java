@@ -167,7 +167,7 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link SenSoModPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -182,9 +182,10 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 			return (SenSoModPackage) EPackage.Registry.INSTANCE.getEPackage(SenSoModPackage.eNS_URI);
 
 		// Obtain or create and register package
-		SenSoModPackageImpl theSenSoModPackage = (SenSoModPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof SenSoModPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new SenSoModPackageImpl());
+		Object registeredSenSoModPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		SenSoModPackageImpl theSenSoModPackage = registeredSenSoModPackage instanceof SenSoModPackageImpl
+				? (SenSoModPackageImpl) registeredSenSoModPackage
+				: new SenSoModPackageImpl();
 
 		isInited = true;
 

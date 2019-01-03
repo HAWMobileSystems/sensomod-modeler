@@ -3,9 +3,15 @@ package sensomod.javasourcecodegen.handlers;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.DirectoryDialog;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -29,11 +35,20 @@ public class Handler extends AbstractHandler {
 		System.out.println(returnCode);
 		if (returnCode == 64) {
 
-			FileDialog fileDialog = new FileDialog(window.getShell());
-			fileDialog.setText("Select *.senSoMod File");
-			fileDialog.setFilterExtensions(new String[] { "*.senSoMod" });
-			fileDialog.setFilterNames(new String[] { "senSoMod(*.senSoMod)" });
-			String selected = fileDialog.open();
+//			FileDialog fileDialog = new FileDialog(window.getShell());
+			SenSoModFileSelector fileDialog = new SenSoModFileSelector("SenSoMod File Selector", "Select *.senSoMod File", new String[] {"sensomod"});
+//			fileDialog.setText("Select *.senSoMod File");
+//			fileDialog.setFilterExtensions(new String[] { "*.senSoMod" });
+//			fileDialog.setFilterNames(new String[] { "senSoMod(*.senSoMod)" })
+//			fileDialog.addFilter(filter);
+			//TODO: Create filter to view only sensomod files
+			
+			fileDialog.open();
+			Object result = fileDialog.getFirstResult();
+			IPath selected = null;
+			if ((result != null) && (result instanceof IResource)) {
+				selected = ((IResource) result).getLocation();
+			}
 			System.out.println(selected);
 
 			DirectoryDialog dirDialog = new DirectoryDialog(window.getShell());
@@ -43,11 +58,11 @@ public class Handler extends AbstractHandler {
 
 			messageDialog = new MessageBox(window.getShell(), SWT.ICON_QUESTION | SWT.OK | SWT.CANCEL);
 			messageDialog.setText("Generate?");
-			messageDialog.setMessage("Do you want generate Java files for\n" + selected + "\n into\n" + selectedDir);
+			messageDialog.setMessage("Do you want generate Java files for\n" + selected.lastSegment() + "\n into\n" + selectedDir);
 			returnCode = messageDialog.open();
 			if (returnCode == 32) {
 				SenSoMod2Java sensomod2java = new SenSoMod2Java();
-				if (sensomod2java.transform(selected, selectedDir)) {
+				if (sensomod2java.transform(selected.toOSString(), selectedDir)) {
 					MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_WORKING | SWT.OK);
 					messageDialog2.setText("Finished");
 					messageDialog2.setMessage("Java Files successfully generated in " + selectedDir);

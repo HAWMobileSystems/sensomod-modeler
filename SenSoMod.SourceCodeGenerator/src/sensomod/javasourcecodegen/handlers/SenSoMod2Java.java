@@ -1,16 +1,12 @@
 package sensomod.javasourcecodegen.handlers;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,15 +26,10 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.EnumDeclaration;
-import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
-import com.github.javaparser.ast.comments.Comment;
 import com.github.javaparser.ast.comments.LineComment;
 import com.github.javaparser.ast.expr.NameExpr;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
-import com.github.javaparser.ast.type.Type;
-import com.github.javaparser.ast.type.VoidType;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
@@ -47,7 +38,7 @@ public class SenSoMod2Java {
 	private FileHandler fileHandler;
 	public static final String PACKAGE = "sensomod.generated";
 	public static final QName TYPE_XSI = new QName("http://www.w3.org/2001/XMLSchema-instance", "type", "xsi");
-	private CompilationUnit cu = new CompilationUnit();
+	private CompilationUnit compilationUnit = new CompilationUnit();
 	private ClassOrInterfaceDeclaration myClass = new ClassOrInterfaceDeclaration();
 	private ClassOrInterfaceDeclaration typeElementClass = new ClassOrInterfaceDeclaration();
 	private CompilationUnit typeElementClassCU = new CompilationUnit();
@@ -63,22 +54,12 @@ public class SenSoMod2Java {
 		this.targetDir = targetDir;
 
 		// Logging
-		try {
-			fileHandler = new FileHandler(targetDir + "/log.txt");
-			SimpleFormatter formatter = new SimpleFormatter();
-			fileHandler.setFormatter(formatter);
-			log.addHandler(fileHandler);
-			log.info("...Start Parsing .sensomod...");
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		createLogfile(targetDir);
 
 		String newfileName = fileName;
 		extractIDsFromNodes(newfileName);
 		mapRelationToClasses(newfileName);
-		cu.setPackageDeclaration(PACKAGE);
+		compilationUnit.setPackageDeclaration(PACKAGE);
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 		try {
 			XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new FileInputStream(newfileName));
@@ -96,7 +77,7 @@ public class SenSoMod2Java {
 							String className = nameAttr.getValue();
 							boolean multiple = false;
 							// Klassenamen setzen
-							myClass = cu.addClass(className, Modifier.PUBLIC);
+							myClass = compilationUnit.addClass(className, Modifier.PUBLIC);
 							// Construktor setzen
 							ConstructorDeclaration cons = new ConstructorDeclaration(className);
 							BlockStmt block = new BlockStmt();
@@ -242,7 +223,7 @@ public class SenSoMod2Java {
 					}
 					if (endElement.getName().getLocalPart().equals("node")) {
 						// Schreibe .java Datei
-						writeToDisk(cu, myClass.getNameAsString());
+						writeToDisk(compilationUnit, myClass.getNameAsString());
 						// Variablen leer machen
 						resetVars();
 					}
@@ -255,6 +236,24 @@ public class SenSoMod2Java {
 		}
 		fileHandler.close();
 		return true;
+	}
+
+	/**
+	 * This method creates the log file.
+	 * @param targetDir targetPath for the logfile.
+	 */
+	private void createLogfile(String targetDir) {
+		try {
+			fileHandler = new FileHandler(targetDir + "/log.txt");
+			SimpleFormatter formatter = new SimpleFormatter();
+			fileHandler.setFormatter(formatter);
+			log.addHandler(fileHandler);
+			log.info("...Start Parsing .sensomod...");
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void createSuperClass(String name) {
@@ -299,8 +298,8 @@ public class SenSoMod2Java {
 	private void resetVars() {
 		output = false;
 		type = false;
-		cu = new CompilationUnit();
-		cu.setPackageDeclaration(PACKAGE);
+		compilationUnit = new CompilationUnit();
+		compilationUnit.setPackageDeclaration(PACKAGE);
 		myClass = new ClassOrInterfaceDeclaration();
 		method = new MethodDeclaration();
 	}
