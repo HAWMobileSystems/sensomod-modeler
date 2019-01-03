@@ -3,13 +3,9 @@ package sensomod.javasourcecodegen.handlers;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.MessageBox;
@@ -32,49 +28,58 @@ public class Handler extends AbstractHandler {
 		messageDialog.setText("Please validate diagram");
 		messageDialog.setMessage("Do you have validated the diagramm? (right click -> Validate diagram)");
 		int returnCode = messageDialog.open();
-		System.out.println(returnCode);
-		if (returnCode == 64) {
+		if (returnCode == SWT.YES) {
 
-//			FileDialog fileDialog = new FileDialog(window.getShell());
-			SenSoModFileSelector fileDialog = new SenSoModFileSelector("SenSoMod File Selector", "Select *.senSoMod File", new String[] {"sensomod"});
-//			fileDialog.setText("Select *.senSoMod File");
-//			fileDialog.setFilterExtensions(new String[] { "*.senSoMod" });
-//			fileDialog.setFilterNames(new String[] { "senSoMod(*.senSoMod)" })
-//			fileDialog.addFilter(filter);
-			//TODO: Create filter to view only sensomod files
+			SenSoModFileSelector fileDialog = new SenSoModFileSelector("SenSoMod File Selector", "Select *.senSoMod file from the projects.", new String[] {"sensomod"});
 			
-			fileDialog.open();
-			Object result = fileDialog.getFirstResult();
-			IPath selected = null;
-			if ((result != null) && (result instanceof IResource)) {
-				selected = ((IResource) result).getLocation();
-			}
-			System.out.println(selected);
-
-			DirectoryDialog dirDialog = new DirectoryDialog(window.getShell());
-			dirDialog.setText("Select directory where java source files should generated");
-			String selectedDir = dirDialog.open();
-			System.out.println(selectedDir);
-
-			messageDialog = new MessageBox(window.getShell(), SWT.ICON_QUESTION | SWT.OK | SWT.CANCEL);
-			messageDialog.setText("Generate?");
-			messageDialog.setMessage("Do you want generate Java files for\n" + selected.lastSegment() + "\n into\n" + selectedDir);
-			returnCode = messageDialog.open();
-			if (returnCode == 32) {
-				SenSoMod2Java sensomod2java = new SenSoMod2Java();
-				if (sensomod2java.transform(selected.toOSString(), selectedDir)) {
-					MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_WORKING | SWT.OK);
-					messageDialog2.setText("Finished");
-					messageDialog2.setMessage("Java Files successfully generated in " + selectedDir);
-					messageDialog2.open();
-				} else {
-					MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_ERROR | SWT.OK);
-					messageDialog2.setText("ERROR");
-					messageDialog2.setMessage("Could not generate Java Files in " + selectedDir);
-					messageDialog2.open();
+			returnCode = fileDialog.open();
+			System.out.println(returnCode);
+			if (returnCode == Window.OK) {
+				Object result = fileDialog.getFirstResult();
+				IPath selected = null;
+				if ((result != null) && (result instanceof IResource)) {
+					selected = ((IResource) result).getLocation();
+				}
+				System.out.println(selected);
+	
+				String selectedDir = createDirDialog(window);
+				System.out.println(selectedDir);
+				if(selected != null || !selectedDir.isEmpty()) {
+					returnCode = createConfirmationDialog(window, selected, selectedDir);
+					if(returnCode == SWT.OK) {						
+						SenSoMod2Java sensomod2java = new SenSoMod2Java();
+						if (sensomod2java.transform(selected.toOSString(), selectedDir)) {
+							MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_WORKING | SWT.OK);
+							messageDialog2.setText("Finished");
+							messageDialog2.setMessage("Java Files successfully generated in " + selectedDir);
+							messageDialog2.open();
+						} else {
+							MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_ERROR | SWT.OK);
+							messageDialog2.setText("ERROR");
+							messageDialog2.setMessage("Could not generate Java Files in " + selectedDir);
+							messageDialog2.open();
+						}					
+					}
 				}
 			}
 		}
 		return null;
+	}
+
+	private int createConfirmationDialog(IWorkbenchWindow window, IPath selected, String selectedDir) {
+		MessageBox messageDialog;
+		int returnCode;
+		messageDialog = new MessageBox(window.getShell(), SWT.ICON_QUESTION | SWT.OK | SWT.CANCEL);
+		messageDialog.setText("Generate?");
+		messageDialog.setMessage("Do you want to generate Java files for the model\n" + selected.lastSegment() + "\n into the following directory:\n" + selectedDir);
+		returnCode = messageDialog.open();
+		return returnCode;
+	}
+
+	private String createDirDialog(IWorkbenchWindow window) {
+		DirectoryDialog dirDialog = new DirectoryDialog(window.getShell());
+		dirDialog.setText("Select directory where java source files should generated");
+		String selectedDir = dirDialog.open();
+		return selectedDir;
 	}
 }
