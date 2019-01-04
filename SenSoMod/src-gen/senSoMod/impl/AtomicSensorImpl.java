@@ -2,13 +2,10 @@
  */
 package senSoMod.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import senSoMod.AtomicSensor;
 import senSoMod.ComputedSensor;
 import senSoMod.SenSoModPackage;
@@ -28,14 +25,14 @@ import senSoMod.SenSoModPackage;
  */
 public abstract class AtomicSensorImpl extends SensorImpl implements AtomicSensor {
 	/**
-	 * The cached value of the '{@link #getComputedsensor() <em>Computedsensor</em>}' reference.
+	 * The cached value of the '{@link #getComputedsensor() <em>Computedsensor</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getComputedsensor()
 	 * @generated
 	 * @ordered
 	 */
-	protected ComputedSensor computedsensor;
+	protected EList<ComputedSensor> computedsensor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,39 +58,12 @@ public abstract class AtomicSensorImpl extends SensorImpl implements AtomicSenso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComputedSensor getComputedsensor() {
-		if (computedsensor != null && computedsensor.eIsProxy()) {
-			InternalEObject oldComputedsensor = (InternalEObject) computedsensor;
-			computedsensor = (ComputedSensor) eResolveProxy(oldComputedsensor);
-			if (computedsensor != oldComputedsensor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR, oldComputedsensor, computedsensor));
-			}
+	public EList<ComputedSensor> getComputedsensor() {
+		if (computedsensor == null) {
+			computedsensor = new EObjectResolvingEList<ComputedSensor>(ComputedSensor.class, this,
+					SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR);
 		}
 		return computedsensor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComputedSensor basicGetComputedsensor() {
-		return computedsensor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComputedsensor(ComputedSensor newComputedsensor) {
-		ComputedSensor oldComputedsensor = computedsensor;
-		computedsensor = newComputedsensor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR,
-					oldComputedsensor, computedsensor));
 	}
 
 	/**
@@ -105,9 +75,7 @@ public abstract class AtomicSensorImpl extends SensorImpl implements AtomicSenso
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR:
-			if (resolve)
-				return getComputedsensor();
-			return basicGetComputedsensor();
+			return getComputedsensor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,11 +85,13 @@ public abstract class AtomicSensorImpl extends SensorImpl implements AtomicSenso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR:
-			setComputedsensor((ComputedSensor) newValue);
+			getComputedsensor().clear();
+			getComputedsensor().addAll((Collection<? extends ComputedSensor>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,7 +106,7 @@ public abstract class AtomicSensorImpl extends SensorImpl implements AtomicSenso
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR:
-			setComputedsensor((ComputedSensor) null);
+			getComputedsensor().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -151,7 +121,7 @@ public abstract class AtomicSensorImpl extends SensorImpl implements AtomicSenso
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case SenSoModPackage.ATOMIC_SENSOR__COMPUTEDSENSOR:
-			return computedsensor != null;
+			return computedsensor != null && !computedsensor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

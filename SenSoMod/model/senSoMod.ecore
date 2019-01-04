@@ -8,7 +8,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="PhysicalSensor" eSuperTypes="#//AtomicSensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="VirtualSensor" eSuperTypes="#//AtomicSensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicSensor" abstract="true" eSuperTypes="#//Sensor">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="computedsensor" eType="#//ComputedSensor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedsensor" upperBound="-1"
+        eType="#//ComputedSensor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//Node">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"

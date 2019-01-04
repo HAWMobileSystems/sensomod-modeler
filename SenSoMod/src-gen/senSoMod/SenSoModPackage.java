@@ -268,7 +268,7 @@ public interface SenSoModPackage extends EPackage {
 	int ATOMIC_SENSOR__OUTPUT = SENSOR__OUTPUT;
 
 	/**
-	 * The feature id for the '<em><b>Computedsensor</b></em>' reference.
+	 * The feature id for the '<em><b>Computedsensor</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -350,7 +350,7 @@ public interface SenSoModPackage extends EPackage {
 	int PHYSICAL_SENSOR__OUTPUT = ATOMIC_SENSOR__OUTPUT;
 
 	/**
-	 * The feature id for the '<em><b>Computedsensor</b></em>' reference.
+	 * The feature id for the '<em><b>Computedsensor</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -432,7 +432,7 @@ public interface SenSoModPackage extends EPackage {
 	int VIRTUAL_SENSOR__OUTPUT = ATOMIC_SENSOR__OUTPUT;
 
 	/**
-	 * The feature id for the '<em><b>Computedsensor</b></em>' reference.
+	 * The feature id for the '<em><b>Computedsensor</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -996,10 +996,10 @@ public interface SenSoModPackage extends EPackage {
 	EClass getAtomicSensor();
 
 	/**
-	 * Returns the meta object for the reference '{@link senSoMod.AtomicSensor#getComputedsensor <em>Computedsensor</em>}'.
+	 * Returns the meta object for the reference list '{@link senSoMod.AtomicSensor#getComputedsensor <em>Computedsensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Computedsensor</em>'.
+	 * @return the meta object for the reference list '<em>Computedsensor</em>'.
 	 * @see senSoMod.AtomicSensor#getComputedsensor()
 	 * @see #getAtomicSensor()
 	 * @generated
@@ -1430,7 +1430,7 @@ public interface SenSoModPackage extends EPackage {
 		EClass ATOMIC_SENSOR = eINSTANCE.getAtomicSensor();
 
 		/**
-		 * The meta object literal for the '<em><b>Computedsensor</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Computedsensor</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

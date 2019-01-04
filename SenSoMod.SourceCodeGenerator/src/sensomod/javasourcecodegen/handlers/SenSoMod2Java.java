@@ -90,7 +90,12 @@ public class SenSoMod2Java {
 								if (classType.toLowerCase().contains("sensor")) {
 
 									Attribute multipleAttr = startElement.getAttributeByName(new QName("multiple"));
-									multiple = Boolean.parseBoolean(multipleAttr.getValue());
+									if(multipleAttr != null) {										
+										multiple = Boolean.parseBoolean(multipleAttr.getValue());
+									} else {
+										log.info("sensor " + className + " has not multiple set");
+										multiple = false;
+									}
 									// multiple im Constructor Wert zuweisen
 									NameExpr namexpr2 = new NameExpr("multiple = " + multiple);
 									block.addStatement(namexpr2);

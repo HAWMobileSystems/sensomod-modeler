@@ -689,7 +689,7 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 
 		initEClass(atomicSensorEClass, AtomicSensor.class, "AtomicSensor", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAtomicSensor_Computedsensor(), this.getComputedSensor(), null, "computedsensor", null, 0, 1,
+		initEReference(getAtomicSensor_Computedsensor(), this.getComputedSensor(), null, "computedsensor", null, 0, -1,
 				AtomicSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

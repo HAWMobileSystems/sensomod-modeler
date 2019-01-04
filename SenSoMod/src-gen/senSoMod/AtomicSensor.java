@@ -2,6 +2,8 @@
  */
 package senSoMod;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Atomic Sensor</b></em>'.
@@ -20,29 +22,19 @@ package senSoMod;
  */
 public interface AtomicSensor extends Sensor {
 	/**
-	 * Returns the value of the '<em><b>Computedsensor</b></em>' reference.
+	 * Returns the value of the '<em><b>Computedsensor</b></em>' reference list.
+	 * The list contents are of type {@link senSoMod.ComputedSensor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Computedsensor</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Computedsensor</em>' reference.
-	 * @see #setComputedsensor(ComputedSensor)
+	 * @return the value of the '<em>Computedsensor</em>' reference list.
 	 * @see senSoMod.SenSoModPackage#getAtomicSensor_Computedsensor()
 	 * @model
 	 * @generated
 	 */
-	ComputedSensor getComputedsensor();
-
-	/**
-	 * Sets the value of the '{@link senSoMod.AtomicSensor#getComputedsensor <em>Computedsensor</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Computedsensor</em>' reference.
-	 * @see #getComputedsensor()
-	 * @generated
-	 */
-	void setComputedsensor(ComputedSensor value);
+	EList<ComputedSensor> getComputedsensor();
 
 } // AtomicSensor
