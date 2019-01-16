@@ -42,6 +42,8 @@ public class SenSoMod2Java {
 	private ClassOrInterfaceDeclaration myClass = new ClassOrInterfaceDeclaration();
 	private ClassOrInterfaceDeclaration typeElementClass = new ClassOrInterfaceDeclaration();
 	private CompilationUnit typeElementClassCU = new CompilationUnit();
+	private ConstructorDeclaration typeElementConstructor = new ConstructorDeclaration();
+	private BlockStmt typeElementContructorBlock = new BlockStmt();
 	private MethodDeclaration method = new MethodDeclaration();
 	private String targetDir = null;
 	private ArrayList<String> nodeNumbers = new ArrayList<>();
@@ -50,7 +52,7 @@ public class SenSoMod2Java {
 	private boolean output = false;
 	private boolean type = false;
 
-	public boolean transform(String fileName, String targetDir) {
+	public boolean transform(String fileName, String targetDir, boolean generateConstructors, boolean generateSettersGetters) {
 		this.targetDir = targetDir;
 
 		// Logging
@@ -114,7 +116,7 @@ public class SenSoMod2Java {
 							// Von Superklase ableiten
 							myClass.addExtendedType(classType);
 							// name im construktor Wert zuweisen
-							NameExpr namexpr = new NameExpr("name = " + '\"' + className + '\"');
+							NameExpr namexpr = new NameExpr("this.name = " + '\"' + className + '\"');
 							block.addStatement(namexpr);
 
 							// Klassenvariablen hinzufügen Bsp: Klasse Context hat eine (private WIFI wifi)
@@ -123,6 +125,13 @@ public class SenSoMod2Java {
 								for (String relation : cs) {
 									relation = relation.replaceAll("[^a-zA-Z0-9]", "").trim();
 									myClass.addField(relation, relation.toLowerCase(), Modifier.PRIVATE);
+									if(generateConstructors) {										
+										addVarToConstructor(relation.toLowerCase(), relation, cons, block);
+									}
+									if(generateSettersGetters) {										
+										createGetter(relation, relation, myClass);
+										createSetter(relation, relation, myClass);
+									}
 								}
 							}
 
@@ -147,8 +156,8 @@ public class SenSoMod2Java {
 						}
 						method.setType(type);
 						// Erzeugt Klasse für Type z.b. Router
-						typeElementClassCU.setPackageDeclaration(PACKAGE);
-						typeElementClass = typeElementClassCU.addClass(type, Modifier.PUBLIC);
+						createBasicTypeClass(type);
+						
 					} else if (startElement.getName().getLocalPart().equals("element") && type == true) {
 						xmlEvent = xmlEventReader.nextEvent();
 						Attribute elementNameAttr = startElement.getAttributeByName(new QName("name"));
@@ -165,6 +174,13 @@ public class SenSoMod2Java {
 							}
 							// Erzeugt Klassenvariablen für Type z.b. String routername;
 							typeElementClass.addField(elementType, elementName.toLowerCase(), Modifier.PRIVATE);
+							if(generateConstructors) {								
+								addVarToConstructor(elementName, elementType, typeElementConstructor, typeElementContructorBlock);
+							}
+							if(generateSettersGetters) {								
+								createGetter(elementName, elementType, typeElementClass);
+								createSetter(elementName, elementType, typeElementClass);
+							}							
 						}
 					} else if (startElement.getName().getLocalPart().equals("enumelement") && type == true) {
 						xmlEvent = xmlEventReader.nextEvent();
@@ -247,6 +263,63 @@ public class SenSoMod2Java {
 	}
 
 	/**
+	 * This method create a setter for a given class.
+	 * 
+	 * @param varName name of the variable for which a setter should be created. 
+	 * @param varType type of the variable for which a setter should be created.
+	 * @param classToAddSetter class which the setter should be added to.
+	 */
+	private void createSetter(String varName, String varType, ClassOrInterfaceDeclaration classToAddSetter) {
+		MethodDeclaration setterMethod = typeElementClass.addMethod("set"+ varName, Modifier.PUBLIC);
+		BlockStmt setterBlock = new BlockStmt();
+		NameExpr innerBlockStatment = new NameExpr("this." + varName.toLowerCase() + " = " + varName.toLowerCase());
+		setterMethod.addParameter(varType, varName.toLowerCase());
+		setterBlock.addStatement(innerBlockStatment);
+		setterMethod.setBody(setterBlock);
+	}
+
+	/**
+	 * 
+	 * This method creates a getter for a given class.
+	 * 
+	 * @param varName name of the variable for which a getter should be created
+	 * @param varType type of the variable for which a getter should be created 
+	 * @param classToAddGetter the class to which a getter should be added
+	 */
+	private void createGetter(String varName, String varType, ClassOrInterfaceDeclaration classToAddGetter) {
+		MethodDeclaration getter = classToAddGetter.addMethod("get" + varName, Modifier.PUBLIC);
+		BlockStmt getterBlock = new BlockStmt();
+		NameExpr innerBlockExpression = new NameExpr("return this." + varName.toLowerCase());
+		getter.setType(varType);
+		getterBlock.addStatement(innerBlockExpression);
+		getter.setBody(getterBlock);
+	}
+
+	/**
+	 * This method creates the basis of the class for the type element
+	 * @param type the type name to create a class for
+	 */
+	private void createBasicTypeClass(String type) {
+		typeElementClassCU.setPackageDeclaration(PACKAGE);
+		typeElementClass = typeElementClassCU.addClass(type, Modifier.PUBLIC);
+		typeElementConstructor = new ConstructorDeclaration(type);
+		typeElementContructorBlock = new BlockStmt();
+		typeElementConstructor.setBody(typeElementContructorBlock);
+		typeElementClass.addMember(typeElementConstructor);
+	}
+
+	/**
+	 * adds variable to the given constructor
+	 * @param varName name of the variable to add
+	 * @param varType type of the variable to add
+	 */
+	private void addVarToConstructor(String varName, String varType, ConstructorDeclaration constructorDeclaration, BlockStmt blockStmt) {
+		constructorDeclaration.addParameter(varType, varName.toLowerCase());
+		NameExpr namexpr = new NameExpr("this." + varName.toLowerCase() + " = "+ varName.toLowerCase() );
+		blockStmt.addStatement(namexpr);
+	}
+
+	/**
 	 * This method creates the log file.
 	 * @param targetDir targetPath for the logfile.
 	 */
@@ -277,7 +350,7 @@ public class SenSoMod2Java {
 	}
 
 	private void writeToDisk(CompilationUnit cu, String filename) {
-		LineComment lc = new LineComment("Use IDE to generate Constructor, Getters, Setters and toString methods");
+		LineComment lc = new LineComment("Use IDE to generate toString and equals methods");
 		cu.addOrphanComment(lc);
 		String filePath = targetDir + "/" + filename + ".java";
 		File f = new File(filePath);

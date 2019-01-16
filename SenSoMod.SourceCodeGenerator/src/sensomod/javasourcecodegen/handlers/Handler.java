@@ -19,6 +19,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * @see org.eclipse.core.commands.AbstractHandler
  */
 public class Handler extends AbstractHandler {
+	private boolean generateConstructors;
+	private boolean generateSettersGetters;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -46,9 +48,9 @@ public class Handler extends AbstractHandler {
 				System.out.println(selectedDir);
 				if(selected != null || !selectedDir.isEmpty()) {
 					returnCode = createConfirmationDialog(window, selected, selectedDir);
-					if(returnCode == SWT.OK) {						
+					if(returnCode == Window.OK) {						
 						SenSoMod2Java sensomod2java = new SenSoMod2Java();
-						if (sensomod2java.transform(selected.toOSString(), selectedDir)) {
+						if (sensomod2java.transform(selected.toOSString(), selectedDir, generateConstructors, generateSettersGetters)) {
 							MessageBox messageDialog2 = new MessageBox(window.getShell(), SWT.ICON_WORKING | SWT.OK);
 							messageDialog2.setText("Finished");
 							messageDialog2.setMessage("Java Files successfully generated in " + selectedDir);
@@ -67,13 +69,14 @@ public class Handler extends AbstractHandler {
 	}
 
 	private int createConfirmationDialog(IWorkbenchWindow window, IPath selected, String selectedDir) {
-		MessageBox messageDialog;
-		int returnCode;
-		messageDialog = new MessageBox(window.getShell(), SWT.ICON_QUESTION | SWT.OK | SWT.CANCEL);
-		messageDialog.setText("Generate?");
-		messageDialog.setMessage("Do you want to generate Java files for the model\n" + selected.lastSegment() + "\n into the following directory:\n" + selectedDir);
-		returnCode = messageDialog.open();
-		return returnCode;
+		ConfirmationDialog confirmationDialog = new ConfirmationDialog(window.getShell(), selected.lastSegment(), selectedDir);
+		int dialogValue = confirmationDialog.open();
+		generateConstructors = confirmationDialog.getGenerateConstructors();
+		generateSettersGetters = confirmationDialog.getGenerateGettersSetters();
+		
+		System.out.println("generate constructors: " + confirmationDialog.getGenerateConstructors());
+		System.out.println("generate getters and setters: " + confirmationDialog.getGenerateGettersSetters());
+		return dialogValue;
 	}
 
 	private String createDirDialog(IWorkbenchWindow window) {
