@@ -26,13 +26,19 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.EnumDeclaration;
+import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.comments.LineComment;
 import com.github.javaparser.ast.expr.NameExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
+import com.github.javaparser.printer.PrettyPrinter;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
-
+/**
+ * 
+ * @author Julian
+ *
+ */
 public class SenSoMod2Java {
 	private static final Logger log = Logger.getLogger(SenSoMod2Java.class.getName());
 	private FileHandler fileHandler;
@@ -51,6 +57,8 @@ public class SenSoMod2Java {
 
 	private boolean output = false;
 	private boolean type = false;
+	private String classType;
+	private ConstructorDeclaration myClassConstructor;
 
 	public boolean transform(String fileName, String targetDir, boolean generateConstructors, boolean generateSettersGetters) {
 		this.targetDir = targetDir;
@@ -74,17 +82,15 @@ public class SenSoMod2Java {
 						Attribute xsiTypeAttr = startElement.getAttributeByName(TYPE_XSI);
 						Attribute nameAttr = startElement.getAttributeByName(new QName("name"));
 						if (nameAttr != null && xsiTypeAttr != null) {
-							String classType = xsiTypeAttr.getValue()
-									.substring(xsiTypeAttr.getValue().indexOf(":") + 1);
+							classType = xsiTypeAttr.getValue().substring(xsiTypeAttr.getValue().indexOf(":") + 1);
 							String className = nameAttr.getValue();
 							boolean multiple = false;
 							// Klassenamen setzen
 							myClass = compilationUnit.addClass(className, Modifier.PUBLIC);
-							// Construktor setzen
-							ConstructorDeclaration cons = new ConstructorDeclaration(className);
+							myClassConstructor = new ConstructorDeclaration(className);
 							BlockStmt block = new BlockStmt();
-							cons.setBody(block);
-							myClass.addMember(cons);
+							myClassConstructor.setBody(block);
+							myClass.addMember(myClassConstructor);
 							log.info("myClass " + myClass.toString());
 
 
@@ -126,11 +132,7 @@ public class SenSoMod2Java {
 									relation = relation.replaceAll("[^a-zA-Z0-9]", "").trim();
 									myClass.addField(relation, relation.toLowerCase(), Modifier.PRIVATE);
 									if(generateConstructors) {										
-										addVarToConstructor(relation.toLowerCase(), relation, cons, block);
-									}
-									if(generateSettersGetters) {										
-										createGetter(relation, relation, myClass);
-										createSetter(relation, relation, myClass);
+										addVarToConstructor(relation.toLowerCase(), relation, myClassConstructor, block);
 									}
 								}
 							}
@@ -144,21 +146,32 @@ public class SenSoMod2Java {
 					} else if (startElement.getName().getLocalPart().equals("type") && output == true) {
 						xmlEvent = xmlEventReader.nextEvent();
 						type = true;
-						method = myClass.addMethod("output", Modifier.PUBLIC);
-						Attribute typeAttr = startElement.getAttributeByName(new QName("name"));
-						String type = "Object";
+						String type = startElement.getAttributeByName(new QName("type")).getValue();
+						Attribute nameAttr = startElement.getAttributeByName(new QName("name"));
+						String name = "Object";
 						try {
-							type = typeAttr.getValue().replaceAll("[^a-zA-Z0-9]", "").trim();
+							name = nameAttr.getValue().replaceAll("[^a-zA-Z0-9]", "").trim();
 
 						} catch (Exception e) {
 							log.log(Level.SEVERE, e.getMessage(), e);
 							return false;
 						}
-						method.setType(type);
-						// Erzeugt Klasse für Type z.b. Router
-						createBasicTypeClass(type);
-						
-					} else if (startElement.getName().getLocalPart().equals("element") && type == true) {
+
+						// Wenn primitiver Javatyp, dann wird eine variable erzeugt und diese gleich zum Konsturktor hinzugefügt
+						// Wenn nicht dann wird eine Klasse für Type erzeugt z.b. Router
+						if(isPrimitiveType(type) && isAtomicSensor(classType) ) {
+							myClass.addField(type, name, Modifier.PRIVATE);
+							if(generateConstructors) {								
+								addVarToConstructor(name, type, myClassConstructor, myClassConstructor.getBody());
+							}
+						} else {							
+							method = myClass.addMethod("output", Modifier.PUBLIC);
+							method.setType(name);
+							LineComment comment = new LineComment("TODO: create logic for return value");
+							method.setComment(comment);
+							createBasicTypeClass(name);
+						}
+						} else if (startElement.getName().getLocalPart().equals("element") && type == true) {
 						xmlEvent = xmlEventReader.nextEvent();
 						Attribute elementNameAttr = startElement.getAttributeByName(new QName("name"));
 						Attribute elementTypeAttr = startElement.getAttributeByName(new QName("type"));
@@ -176,10 +189,6 @@ public class SenSoMod2Java {
 							typeElementClass.addField(elementType, elementName.toLowerCase(), Modifier.PRIVATE);
 							if(generateConstructors) {								
 								addVarToConstructor(elementName, elementType, typeElementConstructor, typeElementContructorBlock);
-							}
-							if(generateSettersGetters) {								
-								createGetter(elementName, elementType, typeElementClass);
-								createSetter(elementName, elementType, typeElementClass);
 							}							
 						}
 					} else if (startElement.getName().getLocalPart().equals("enumelement") && type == true) {
@@ -239,12 +248,20 @@ public class SenSoMod2Java {
 				if (xmlEvent.isEndElement()) {
 					EndElement endElement = xmlEvent.asEndElement();
 					if (endElement.getName().getLocalPart().equals("output")) {
+						//create getter and setters for all fields
+						if(generateSettersGetters) {
+							createGettersAndSetters(typeElementClass);
+						}
 						// Schreibe .java Datei
 						writeToDisk(typeElementClassCU, typeElementClass.getNameAsString());
 						// Variablen leer machen
 						resetVarsTypeElement();
 					}
 					if (endElement.getName().getLocalPart().equals("node")) {
+						//create getter and setters for all fields
+						if(generateSettersGetters) {
+							createGettersAndSetters(myClass);
+						}
 						// Schreibe .java Datei
 						writeToDisk(compilationUnit, myClass.getNameAsString());
 						// Variablen leer machen
@@ -263,37 +280,65 @@ public class SenSoMod2Java {
 	}
 
 	/**
-	 * This method create a setter for a given class.
+	 * This class creates getters and setters for a given class
+	 * @param class for which the getters and Setter should be created
 	 * 
-	 * @param varName name of the variable for which a setter should be created. 
-	 * @param varType type of the variable for which a setter should be created.
-	 * @param classToAddSetter class which the setter should be added to.
 	 */
-	private void createSetter(String varName, String varType, ClassOrInterfaceDeclaration classToAddSetter) {
-		MethodDeclaration setterMethod = typeElementClass.addMethod("set"+ varName, Modifier.PUBLIC);
-		BlockStmt setterBlock = new BlockStmt();
-		NameExpr innerBlockStatment = new NameExpr("this." + varName.toLowerCase() + " = " + varName.toLowerCase());
-		setterMethod.addParameter(varType, varName.toLowerCase());
-		setterBlock.addStatement(innerBlockStatment);
-		setterMethod.setBody(setterBlock);
+	private void createGettersAndSetters(ClassOrInterfaceDeclaration classOrInterface) {
+		for(FieldDeclaration actualField : classOrInterface.getFields()) {
+			actualField.createGetter();
+			actualField.createSetter();
+		}
 	}
 
 	/**
-	 * 
-	 * This method creates a getter for a given class.
-	 * 
-	 * @param varName name of the variable for which a getter should be created
-	 * @param varType type of the variable for which a getter should be created 
-	 * @param classToAddGetter the class to which a getter should be added
+	 * This class checks whether or not a given classType is an atomic sensor or not.
+	 * It is atomic, when the sensor is a type of a virtual or physical sensor.
+	 * @param classType class type to check as string
+	 * @return whether or not the classType is atomic
 	 */
-	private void createGetter(String varName, String varType, ClassOrInterfaceDeclaration classToAddGetter) {
-		MethodDeclaration getter = classToAddGetter.addMethod("get" + varName, Modifier.PUBLIC);
-		BlockStmt getterBlock = new BlockStmt();
-		NameExpr innerBlockExpression = new NameExpr("return this." + varName.toLowerCase());
-		getter.setType(varType);
-		getterBlock.addStatement(innerBlockExpression);
-		getter.setBody(getterBlock);
+	private boolean isAtomicSensor(String classType) {
+		switch (classType) {
+		case "PhysicalSensor":
+			return true;
+		case "VirtualSensor":
+			return true;
+		default:
+			return false;
+		}
 	}
+
+	/**
+	 * This method check whether the given string type is a primitive 
+	 * java object according to <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">java_docs</a>
+	 * @param type string value of the type to proof
+	 * @return whether it is or it is not a primitive type
+	 */
+	private boolean isPrimitiveType(String type) {
+		switch (type) {
+		case "byte":
+			return true;
+		case "short":
+			return true;
+		case "int":
+			return true;
+		case "long":
+			return true;
+		case "float":
+			return true;
+		case "double":
+			return true;
+		case "boolean":
+			return true;
+		case "char":
+			return true;
+		case "String":
+			return true;
+		default:
+			return false;
+		}
+	}
+
 
 	/**
 	 * This method creates the basis of the class for the type element
@@ -369,7 +414,8 @@ public class SenSoMod2Java {
 
 		}
 		try (PrintWriter out = new PrintWriter(filePath)) {
-			out.println(cu);
+			PrettyPrinter prettyPrinter = new PrettyPrinter();
+			out.println(prettyPrinter.print(cu));
 		} catch (FileNotFoundException e) {
 			log.log(Level.SEVERE, e.getMessage(), e);
 
