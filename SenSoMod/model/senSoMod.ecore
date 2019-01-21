@@ -21,6 +21,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComputedSensor" eSuperTypes="#//Sensor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="decisionlogic" eType="#//DecisionLogic"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedsensor" upperBound="-1"
+        eType="#//ComputedSensor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

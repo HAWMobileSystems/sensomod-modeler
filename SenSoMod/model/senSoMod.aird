@@ -550,6 +550,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__zs6ygqFEeiUh4_MTGTUKw" id="(1.0,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__zs6ywqFEeiUh4_MTGTUKw" id="(0.0,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_0wJLkB1GEemuMJ9AdfCl-Q" type="4001" element="_0vsfph1GEemuMJ9AdfCl-Q" source="_A-kEMNnaEeeW_bDv6eo7oA" target="_A-kEMNnaEeeW_bDv6eo7oA">
+          <children xmi:type="notation:Node" xmi:id="_0wOrIB1GEemuMJ9AdfCl-Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0wOrIR1GEemuMJ9AdfCl-Q" x="-14" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_0wPSMB1GEemuMJ9AdfCl-Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0wPSMR1GEemuMJ9AdfCl-Q" x="-8" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_0wP5QB1GEemuMJ9AdfCl-Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0wP5QR1GEemuMJ9AdfCl-Q" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_0wJLkR1GEemuMJ9AdfCl-Q" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_0wJLkh1GEemuMJ9AdfCl-Q" fontColor="7490599" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0wJLkx1GEemuMJ9AdfCl-Q" points="[7, 1, 64, -28]$[21, 1, 78, -28]$[21, 75, 78, 46]$[-58, 75, -1, 46]$[-58, 32, -1, 3]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0wSVgB1GEemuMJ9AdfCl-Q" id="(0.9473684210526315,0.68)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0wSVgR1GEemuMJ9AdfCl-Q" id="(0.518796992481203,0.97)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_geu70NnZEeeW_bDv6eo7oA" name="Modell" tooltipText="" outgoingEdges="_QLpSYNnaEeeW_bDv6eo7oA" width="12" height="10">
@@ -653,7 +669,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_A-hn8NnaEeeW_bDv6eo7oA" name="ComputedSensor" tooltipText="" outgoingEdges="_ETKogNnaEeeW_bDv6eo7oA _nT-hIPGaEeeMKeQANv5msQ" incomingEdges="_GE088NnmEeeW_bDv6eo7oA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_A-hn8NnaEeeW_bDv6eo7oA" name="ComputedSensor" tooltipText="" outgoingEdges="_ETKogNnaEeeW_bDv6eo7oA _nT-hIPGaEeeMKeQANv5msQ _0vsfph1GEemuMJ9AdfCl-Q" incomingEdges="_GE088NnmEeeW_bDv6eo7oA _0vsfph1GEemuMJ9AdfCl-Q" width="12" height="10">
       <target xmi:type="ecore:EClass" href="senSoMod.ecore#//ComputedSensor"/>
       <semanticElements xmi:type="ecore:EClass" href="senSoMod.ecore#//ComputedSensor"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1050,6 +1066,20 @@
           <customFeatures>labelSize</customFeatures>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="__zZ_0wqFEeiUh4_MTGTUKw" showIcon="false" labelColor="39,76,114">
+          <customFeatures>labelSize</customFeatures>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_0vsfph1GEemuMJ9AdfCl-Q" name="[0..*] computedsensor" sourceNode="_A-hn8NnaEeeW_bDv6eo7oA" targetNode="_A-hn8NnaEeeW_bDv6eo7oA">
+      <target xmi:type="ecore:EReference" href="senSoMod.ecore#//ComputedSensor/computedsensor"/>
+      <semanticElements xmi:type="ecore:EReference" href="senSoMod.ecore#//ComputedSensor/computedsensor"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_0vtGsB1GEemuMJ9AdfCl-Q" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_0vtGsh1GEemuMJ9AdfCl-Q" showIcon="false">
+          <customFeatures>labelSize</customFeatures>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_0vtGsR1GEemuMJ9AdfCl-Q" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
         </endLabelStyle>
       </ownedStyle>

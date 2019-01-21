@@ -24,6 +24,7 @@
     </genClasses>
     <genClasses ecoreClass="senSoMod.ecore#//ComputedSensor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference senSoMod.ecore#//ComputedSensor/decisionlogic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference senSoMod.ecore#//ComputedSensor/computedsensor"/>
     </genClasses>
     <genClasses ecoreClass="senSoMod.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute senSoMod.ecore#//Node/name"/>

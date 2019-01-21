@@ -523,13 +523,22 @@ public interface SenSoModPackage extends EPackage {
 	int COMPUTED_SENSOR__DECISIONLOGIC = SENSOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Computedsensor</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTED_SENSOR__COMPUTEDSENSOR = SENSOR_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Computed Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTED_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 1;
+	int COMPUTED_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Computed Sensor</em>' class.
@@ -1071,6 +1080,17 @@ public interface SenSoModPackage extends EPackage {
 	EReference getComputedSensor_Decisionlogic();
 
 	/**
+	 * Returns the meta object for the reference list '{@link senSoMod.ComputedSensor#getComputedsensor <em>Computedsensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Computedsensor</em>'.
+	 * @see senSoMod.ComputedSensor#getComputedsensor()
+	 * @see #getComputedSensor()
+	 * @generated
+	 */
+	EReference getComputedSensor_Computedsensor();
+
+	/**
 	 * Returns the meta object for class '{@link senSoMod.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1488,6 +1508,14 @@ public interface SenSoModPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPUTED_SENSOR__DECISIONLOGIC = eINSTANCE.getComputedSensor_Decisionlogic();
+
+		/**
+		 * The meta object literal for the '<em><b>Computedsensor</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPUTED_SENSOR__COMPUTEDSENSOR = eINSTANCE.getComputedSensor_Computedsensor();
 
 		/**
 		 * The meta object literal for the '{@link senSoMod.impl.NodeImpl <em>Node</em>}' class.

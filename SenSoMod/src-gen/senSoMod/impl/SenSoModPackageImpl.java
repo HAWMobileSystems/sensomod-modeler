@@ -316,6 +316,15 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComputedSensor_Computedsensor() {
+		return (EReference) computedSensorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNode() {
 		return nodeEClass;
 	}
@@ -600,6 +609,7 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 
 		computedSensorEClass = createEClass(COMPUTED_SENSOR);
 		createEReference(computedSensorEClass, COMPUTED_SENSOR__DECISIONLOGIC);
+		createEReference(computedSensorEClass, COMPUTED_SENSOR__COMPUTEDSENSOR);
 
 		nodeEClass = createEClass(NODE);
 		createEAttribute(nodeEClass, NODE__NAME);
@@ -707,6 +717,9 @@ public class SenSoModPackageImpl extends EPackageImpl implements SenSoModPackage
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComputedSensor_Decisionlogic(), this.getDecisionLogic(), null, "decisionlogic", null, 0, 1,
 				ComputedSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComputedSensor_Computedsensor(), this.getComputedSensor(), null, "computedsensor", null, 0,
+				-1, ComputedSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
