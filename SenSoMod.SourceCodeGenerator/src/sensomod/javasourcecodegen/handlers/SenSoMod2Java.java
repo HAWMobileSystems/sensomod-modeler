@@ -157,20 +157,16 @@ public class SenSoMod2Java {
 							return false;
 						}
 
-						// Wenn primitiver Javatyp, dann wird eine variable erzeugt und diese gleich zum Konsturktor hinzugefügt
+						// Wenn primitiver Javatyp, dann wird eine Variable erzeugt und diese gleich zum Konsturktor hinzugefügt
 						// Wenn nicht dann wird eine Klasse für Type erzeugt z.b. Router
 						if(isPrimitiveType(type) && isAtomicSensor(classType) ) {
 							myClass.addField(type, name, Modifier.PRIVATE);
 							if(generateConstructors) {								
 								addVarToConstructor(name, type, myClassConstructor, myClassConstructor.getBody());
 							}
-						} else {							
-							method = myClass.addMethod("output", Modifier.PUBLIC);
-							method.setType(name);
-							LineComment comment = new LineComment("TODO: create logic for return value");
-							method.setComment(comment);
-							createBasicTypeClass(name);
-						}
+						}							
+						createOutputMethod(name);
+						
 						} else if (startElement.getName().getLocalPart().equals("element") && type == true) {
 						xmlEvent = xmlEventReader.nextEvent();
 						Attribute elementNameAttr = startElement.getAttributeByName(new QName("name"));
@@ -277,6 +273,20 @@ public class SenSoMod2Java {
 		}
 		fileHandler.close();
 		return true;
+	}
+
+	/**
+	 * 
+	 * This method creates the output method with the given return type.
+	 * 
+	 * @param returnValue the return type of the output method
+	 */
+	private void createOutputMethod(String returnValue) {
+		method = myClass.addMethod("output", Modifier.PUBLIC);
+		method.setType(returnValue);
+		LineComment comment = new LineComment("TODO: create logic for return value");
+		method.setComment(comment);
+		createBasicTypeClass(returnValue);
 	}
 
 	/**
