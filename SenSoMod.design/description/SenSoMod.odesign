@@ -16,6 +16,18 @@
         <ownedRules xsi:type="validation:SemanticValidationRule" name="EnumElementNoValues" level="ERROR" message="aql:self.oclAsType(senSoMod::EnumElement).name+' has no values'" targetClass="senSoMod::EnumElement">
           <audits auditExpression="aql:self.oclAsType(senSoMod::EnumElement).valuesCommaSep.toString().size()>0"/>
         </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="TypeConsistenceRule" level="ERROR" message="The property 'Type' should either be a primitive java type (correct spelled?) or it should be &quot;Object&quot; and a element/enumElement should be added." targetClass="senSoMod::Type">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Type).enumelement->notEmpty() or self.element->notEmpty() or self.type.matches('byte|short|int|long|float|double|boolean|char|String|Object')"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="ElementTypeIsPrimitive" level="ERROR" message="The property 'Type' has to be a primitive java type. Also check the spelling (case sensitive)!" targetClass="senSoMod::Element">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Element).type.matches('byte|short|int|long|float|double|boolean|char|String')"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="TypePrimitiveVarNameIsLowerCase" level="WARNING" message="The property 'Name' should start with a lower case when it is a primitive type." targetClass="senSoMod::Type">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Type).type.matches('byte|short|int|long|float|double|boolean|char|String') and self.name.first(1).matches('^\\p{Lower}') or self.enumelement->notEmpty() or self.element->notEmpty() "/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="ElementNameIsLowerCase" level="WARNING" message="The property 'Name' should start with a lower case." targetClass="senSoMod::Element">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Element).name.first(1).matches('^\\p{Lower}')"/>
+        </ownedRules>
       </validationSet>
       <defaultLayer name="Default">
         <edgeMappings name="ContextDescRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteContextDesRelation']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']" targetFinderExpression="feature:contextdescription">
@@ -34,8 +46,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ComputedSensorRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteComSenRel']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']" targetFinderExpression="feature:computedsensor">
-          <style sizeComputationExpression="2">
+        <edgeMappings name="ComputedSensorRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteComSenRel']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='PhysicalSensorNode'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='VirtualSensorNode'] //@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ComputedSensorNode']" targetFinderExpression="feature:computedsensor">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

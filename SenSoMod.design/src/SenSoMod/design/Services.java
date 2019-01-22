@@ -1,15 +1,11 @@
 package SenSoMod.design;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.AbstractDNode;
-import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.ui.business.api.view.SiriusLayoutDataManager;
-import org.eclipse.sirius.diagram.ui.business.internal.query.DNodeContainerQuery;
 import org.eclipse.sirius.diagram.ui.business.internal.view.LayoutData;
 import org.eclipse.sirius.diagram.ui.business.internal.view.RootLayoutData;
 
@@ -18,8 +14,6 @@ import senSoMod.Context;
 import senSoMod.ContextDescription;
 import senSoMod.PhysicalSensor;
 import senSoMod.VirtualSensor;
-
-import org.eclipse.gef.EditPart;
 
 /**
  * The services class used by VSM.
