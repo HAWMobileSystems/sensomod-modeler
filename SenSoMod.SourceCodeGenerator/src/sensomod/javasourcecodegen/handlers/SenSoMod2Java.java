@@ -164,8 +164,11 @@ public class SenSoMod2Java {
 							if(generateConstructors) {								
 								addVarToConstructor(name, type, myClassConstructor, myClassConstructor.getBody());
 							}
-						}							
-						createOutputMethod(name);
+							createOutputMethod(type, name);
+						} else {
+							createOutputMethod(name, name);
+							createBasicTypeClass(name);
+						}
 						
 						} else if (startElement.getName().getLocalPart().equals("element") && type == true) {
 						xmlEvent = xmlEventReader.nextEvent();
@@ -243,12 +246,13 @@ public class SenSoMod2Java {
 
 				if (xmlEvent.isEndElement()) {
 					EndElement endElement = xmlEvent.asEndElement();
-					if (endElement.getName().getLocalPart().equals("output")) {
+					if (endElement.getName().getLocalPart().equals("output") && "empty".equals(typeElementClass.getNameAsString())) {
 						//create getter and setters for all fields
 						if(generateSettersGetters) {
 							createGettersAndSetters(typeElementClass);
 						}
 						// Schreibe .java Datei
+
 						writeToDisk(typeElementClassCU, typeElementClass.getNameAsString());
 						// Variablen leer machen
 						resetVarsTypeElement();
@@ -281,12 +285,10 @@ public class SenSoMod2Java {
 	 * 
 	 * @param returnValue the return type of the output method
 	 */
-	private void createOutputMethod(String returnValue) {
+	private void createOutputMethod(String returnType, String variableName) {
 		method = myClass.addMethod("output", Modifier.PUBLIC);
-		method.setType(returnValue);
-		LineComment comment = new LineComment("TODO: create logic for return value");
-		method.setComment(comment);
-		createBasicTypeClass(returnValue);
+		method.setType(returnType);
+		method.setBlockComment("TODO: create logic to return the " + variableName);
 	}
 
 	/**
