@@ -28,6 +28,9 @@
         <ownedRules xsi:type="validation:SemanticValidationRule" name="ElementNameIsLowerCase" level="WARNING" message="The property 'Name' should start with a lower case." targetClass="senSoMod::Element">
           <audits auditExpression="aql:self.oclAsType(senSoMod::Element).name.first(1).matches('^\\p{Lower}')"/>
         </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="ElementNameConvention" level="WARNING" message="The Property 'Name' should be in the upper case notation. (only letters and it starts with an upper letter)" targetClass="senSoMod::Node">
+          <audits auditExpression="aql:self.oclAsType(senSoMod::Node).name.matches('([A-Z]+[a-z]+\\d*)+')"/>
+        </ownedRules>
       </validationSet>
       <defaultLayer name="Default">
         <edgeMappings name="ContextDescRelation" deletionDescription="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteContextDesRelation']" labelDirectEdit="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Direct%20Edit%20Label']" sourceMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']" targetMapping="//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']" targetFinderExpression="feature:contextdescription">
