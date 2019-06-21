@@ -246,7 +246,9 @@ public class SenSoMod2Java {
 
 				if (xmlEvent.isEndElement()) {
 					EndElement endElement = xmlEvent.asEndElement();
-					if (endElement.getName().getLocalPart().equals("output") && "empty".equals(typeElementClass.getNameAsString())) {
+					if (endElement.getName().getLocalPart().equals("output") 
+							&& !"empty".equals(typeElementClass.getNameAsString())
+							) {
 						//create getter and setters for all fields
 						if(generateSettersGetters) {
 							createGettersAndSetters(typeElementClass);
