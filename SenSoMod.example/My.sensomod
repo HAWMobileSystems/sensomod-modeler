@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <senSoMod:Modell xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senSoMod="http://www.example.org/senSoMod">
-  <node xsi:type="senSoMod:ContextDescription" name="CE1">
+  <node xsi:type="senSoMod:ContextDescription" name="Ce">
     <contextexpression name="Location = At Work"/>
   </node>
   <node xsi:type="senSoMod:Context" name="Location" contextdescription="//@node.0">
-    <decisionlogic name="if(routerName ==&quot;SSID1&quot; || (long ==12.114 &amp;&amp; lat ==48.547)&#xD;&#xA;&#x9;location = &quot;office building&quot;&#xD;&#xA;if ...&#xD;&#xA;else&#xD;&#xA;&#x9;Location = Unknown"/>
+    <decisionlogic name="if(routerName ==&quot;SSID1&quot; || (longitude ==12.114 &amp;&amp; latitude ==48.547)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Location = &quot;Unknown&quot;;&#xD;&#xA;&#x9;&#x9;}"/>
     <output>
       <type name="Locations" type="Enum">
         <enumelement name="BuildingEnum" valuesCommaSep="At work; At home, At Customer, Unknown"/>
       </type>
     </output>
   </node>
-  <node xsi:type="senSoMod:PhysicalSensor" name="WIFI" context="//@node.1">
+  <node xsi:type="senSoMod:PhysicalSensor" name="Wifi" context="//@node.1">
     <output>
       <type name="Router" type="Object">
-        <element name="Routername" type="String"/>
+        <element name="routername" type="String"/>
       </type>
     </output>
   </node>
-  <node xsi:type="senSoMod:PhysicalSensor" name="GPS" context="//@node.1">
+  <node xsi:type="senSoMod:PhysicalSensor" name="Gps" context="//@node.1">
     <output>
       <type name="Position" type="Object">
-        <element name="Long" type="double"/>
-        <element name="Lat" type="Double"/>
+        <element name="longitude" type="double"/>
+        <element name="latitude" type="double"/>
       </type>
     </output>
   </node>
-  <node xsi:type="senSoMod:VirtualSensor" name="Location-DB" context="//@node.1">
+  <node xsi:type="senSoMod:VirtualSensor" name="LocationDb" context="//@node.1">
     <output>
       <type name="Building" type="Object">
-        <element name="Location" type="String"/>
-        <element name="Long" type="Double"/>
-        <element name="Lat" type="Double"/>
-        <element name="Router" type="Object"/>
+        <element name="location" type="String"/>
+        <element name="longitude" type="double"/>
+        <element name="latitude" type="double"/>
+        <element name="router" type="String"/>
       </type>
+    </output>
+  </node>
+  <node xsi:type="senSoMod:PhysicalSensor" name="Bluetooth" context="//@node.1">
+    <output>
+      <type name="Test" type="String"/>
     </output>
   </node>
 </senSoMod:Modell>

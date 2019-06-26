@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ModelGenerator
+Bundle-SymbolicName: SenSoMod.ModelGenerator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ com.github.javaparser.javaparser-core;bundle-version="3.5.10"
+Automatic-Module-Name: SenSoMod.ModelGenerator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

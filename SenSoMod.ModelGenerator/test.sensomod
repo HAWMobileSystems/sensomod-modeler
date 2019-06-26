@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<senSoMod:Modell xmlns:xmi="http://www.omg.org/XMI" xmlns:senSoMod="http://www.example.org/senSoMod" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <node name="Ce" xsi:type="senSoMod:ContextDescription">
+        <contextexpression name="Location = &quot;At Work&quot;;"/>
+    </node>
+    <node contextdescription="//@node.0" name="Location" xsi:type="senSoMod:Context">
+        <decisionlogic name="if (routerName == &quot;SSID1&quot; || (longitude == 12.114 &amp;&amp; latitude == 48.547)) {&#xD;&#xA;    } else {&#xD;&#xA;        Location = &quot;Unknown&quot;;&#xD;&#xA;    }&#xD;&#xA;    ;"/>
+        <output>
+            <type name="Locations" type="Enum">
+                <enumelement name="BuildingEnum" valuesCommaSep="Atwork, Athome, AtCustomer, Unknown"/>
+            </type>
+        </output>
+    </node>
+    <node context="//@node.1" name="Bluetooth" xsi:type="senSoMod:PhysicalSensor">
+        <output>
+            <type name="Test" type="String"/>
+        </output>
+    </node>
+    <node context="//@node.1" name="Gps" xsi:type="senSoMod:PhysicalSensor">
+        <output>
+            <type name="Position" type="Object">
+                <element name="longitude" type="double"/>
+                <element name="latitude" type="double"/>
+            </type>
+        </output>
+    </node>
+    <node context="//@node.1" name="Wifi" xsi:type="senSoMod:PhysicalSensor">
+        <output>
+            <type name="Router" type="Object">
+                <element name="routername" type="String"/>
+            </type>
+        </output>
+    </node>
+    <node context="//@node.1" name="LocationDb" xsi:type="senSoMod:VirtualSensor">
+        <output>
+            <type name="Building" type="Object">
+                <element name="location" type="String"/>
+                <element name="longitude" type="double"/>
+                <element name="latitude" type="double"/>
+                <element name="router" type="String"/>
+            </type>
+        </output>
+    </node>
+</senSoMod:Modell>
