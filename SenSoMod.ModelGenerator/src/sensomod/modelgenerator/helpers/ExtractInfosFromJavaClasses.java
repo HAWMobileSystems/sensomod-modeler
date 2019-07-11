@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +22,7 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
+import sensomod.modelgenerator.handlers.Handler;
 import sensomod.modelgenerator.jaxb.objects.ContextExpression;
 import sensomod.modelgenerator.jaxb.objects.DecisionLogic;
 import sensomod.modelgenerator.jaxb.objects.Element;
@@ -31,6 +33,8 @@ import sensomod.modelgenerator.jaxb.objects.Output;
 import sensomod.modelgenerator.jaxb.objects.Type;
 
 public class ExtractInfosFromJavaClasses {
+
+	private static final Logger LOG = Logger.getLogger(Handler.class.getName());
 	
 	private List<Node> contextDescriptions = new ArrayList<Node>();
 	private List<Node> contextList = new ArrayList<Node>();
@@ -41,7 +45,12 @@ public class ExtractInfosFromJavaClasses {
 	private Map<String, ClassOrInterfaceDeclaration> mainModelElements = new HashMap<>(); 
 	private Map<String, ClassOrInterfaceDeclaration> others = new HashMap<String, ClassOrInterfaceDeclaration>();
 	
-	 public void listClasses(File projectDir) {
+	/**
+	 * This method analzyes in the given path the java classes to generate afterwards the sensomod model from it
+	 * @param projectDir the directory where the java files to analyze lay
+	 * @param targetDir the directory to put the generated sensomo file to
+	 */
+	public void analyzeClassesAndGenerateModel(File projectDir, File targetDir) {
 	     exploreDirectoryForModellClasses(projectDir);
 	     createOutputSection();
 	     assignDependenciesBetweenModellComponents();
@@ -52,7 +61,7 @@ public class ExtractInfosFromJavaClasses {
 		 modell.getNodes().addAll(computedSensors);
 		 modell.getNodes().addAll(physicalAtomicSensors);
 		 modell.getNodes().addAll(virtualAtomicSensors);
-		 modellToXML(modell);		 
+		 modellToXML(modell, targetDir);		 
     }
 
 	 /**
@@ -301,7 +310,7 @@ public class ExtractInfosFromJavaClasses {
 		}
 	}
 	 
-	 private void modellToXML(Modell modell)
+	 private void modellToXML(Modell modell, File targetDirectory)
 	    {
 	        try
 	        {
@@ -314,8 +323,9 @@ public class ExtractInfosFromJavaClasses {
 	            //Required formatting??
 	            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 	 
+	            
 	           //Store XML to File
-	            File file = new File("test.sensomod");
+	            File file = new File(targetDirectory.getAbsolutePath() + File.separator + "generated.sensomod");
 	             
 	            //Writes XML file to file-system
 	            jaxbMarshaller.marshal(modell, file);

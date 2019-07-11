@@ -54,7 +54,7 @@
                label="Toolbar">
             <command
                   commandId="SenSoMod.SourceCodeGenerator.commands.Command"
-                  icon="icons/sample.png"
+                  icon="icons/Code.png"
                   id="SenSoMod.SourceCodeGenerator.toolbars.Command"
                   label="SourceCodeGenerator"
                   tooltip="Generate JavaSourceCode">
