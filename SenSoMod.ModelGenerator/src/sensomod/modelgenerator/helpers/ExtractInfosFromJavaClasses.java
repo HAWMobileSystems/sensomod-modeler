@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,6 +15,10 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
@@ -21,6 +26,7 @@ import com.github.javaparser.ast.body.EnumDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+import com.github.javaparser.utils.Log;
 
 import sensomod.modelgenerator.handlers.Handler;
 import sensomod.modelgenerator.jaxb.objects.ContextExpression;
@@ -45,23 +51,48 @@ public class ExtractInfosFromJavaClasses {
 	private Map<String, ClassOrInterfaceDeclaration> mainModelElements = new HashMap<>(); 
 	private Map<String, ClassOrInterfaceDeclaration> others = new HashMap<String, ClassOrInterfaceDeclaration>();
 	
+	private Shell shell;
+	private File targetDir;
+	
+	/**
+	 * Default constructor.
+	 */
+	public ExtractInfosFromJavaClasses() {
+		super();
+	}
+	
+	/**
+	 * Constructor for the handler
+	 * @param shell the window shell to generate prompts.
+	 */
+	public ExtractInfosFromJavaClasses (Shell shell) {
+		this.shell = shell;
+	}
+	
 	/**
 	 * This method analzyes in the given path the java classes to generate afterwards the sensomod model from it
 	 * @param projectDir the directory where the java files to analyze lay
 	 * @param targetDir the directory to put the generated sensomo file to
 	 */
-	public void analyzeClassesAndGenerateModel(File projectDir, File targetDir) {
-	     exploreDirectoryForModellClasses(projectDir);
-	     createOutputSection();
-	     assignDependenciesBetweenModellComponents();
+	public boolean analyzeClassesAndGenerateModel(File projectDir, File targetDir) {
+		this.targetDir = targetDir;
+	    exploreDirectoryForModellClasses(projectDir);
+	    createOutputSection();
+	    assignDependenciesBetweenModellComponents();
 	     
-		 Modell modell = new Modell();
-		 modell.getNodes().addAll(contextDescriptions);
-		 modell.getNodes().addAll(contextList);
-		 modell.getNodes().addAll(computedSensors);
-		 modell.getNodes().addAll(physicalAtomicSensors);
-		 modell.getNodes().addAll(virtualAtomicSensors);
-		 modellToXML(modell, targetDir);		 
+		Modell modell = new Modell();
+		modell.getNodes().addAll(contextDescriptions);
+		modell.getNodes().addAll(contextList);
+		modell.getNodes().addAll(computedSensors);
+		modell.getNodes().addAll(physicalAtomicSensors);
+		modell.getNodes().addAll(virtualAtomicSensors);
+		try {
+			modellToXML(modell, targetDir);
+		} catch (JAXBException e) {
+			LOG.log(Level.SEVERE, "Exception thrown while writing sensomod file: " + e.toString(), e);
+			return false;
+		}
+		return true;
     }
 
 	 /**
@@ -71,6 +102,7 @@ public class ExtractInfosFromJavaClasses {
 	  * 
 	  */
 	private void createOutputSection() {
+		LOG.info("Start to create the output sections");
 		for(ClassOrInterfaceDeclaration currentClassOrInterface : mainModelElements.values()) {
 			for(MethodDeclaration currentMethod: currentClassOrInterface.getMethods()){
 				Output output = new Output();
@@ -128,6 +160,7 @@ public class ExtractInfosFromJavaClasses {
 				}
 			}
 		}
+		Log.info("Emd to create the output sections");
 		
 	}
 
@@ -175,8 +208,10 @@ public class ExtractInfosFromJavaClasses {
 	}
 
 	private void assignDependenciesBetweenModellComponents() {
+		Log.info("Start to assign the dependencies between the model elements");
 		assignContextDescriptionDependencies();
 		assignContextDependencies();
+		Log.info("Stop to assign the dependencies between the model elements");
 	}
 
 	private void assignContextDependencies() {
@@ -214,12 +249,7 @@ public class ExtractInfosFromJavaClasses {
 
 	private void exploreDirectoryForModellClasses(File projectDir) {
 		new DirExplorer((level, path, file) -> path.endsWith(".java"), (level, path, file) -> {
-		    System.out.println(path);
-		    String separator ="";
-		    for(int i = 0; i<path.length(); i++) {
-		    	separator += "=";
-		    }
-		    System.out.println(separator);
+		   LOG.info("Analyze java file: " + path);
 		    try {
 		        new VoidVisitorAdapter<Object>() {
 		        	String contextExpression = "";
@@ -227,12 +257,12 @@ public class ExtractInfosFromJavaClasses {
 		            @Override
 		            public void visit(ClassOrInterfaceDeclaration n, Object arg) {
 		                super.visit(n, arg);
-		                System.out.println(" name " + n.getName());
+		                LOG.info(" name " + n.getName());
 		                if(n.getExtendedTypes() != null && !n.getExtendedTypes().isEmpty()) {		                	
 		                	n.getExtendedTypes().forEach(extendedType ->{
-		                		System.out.println("extends:" + extendedType.getNameAsString());
+		                		LOG.info("extends:" + extendedType.getNameAsString());
 		                		n.getMethods().forEach(currentMethod ->{
-		                			System.out.println("Method name: " + currentMethod.getNameAsString());
+		                			LOG.info("Method name: " + currentMethod.getNameAsString());
 		                			if(currentMethod.getNameAsString().equals("contextExpression")) {
 		                				contextExpression =  currentMethod.getBody().get().toString().trim();
 		                				//the cut of the first and the last position is necessary because the brackets of the method statement are 
@@ -295,11 +325,16 @@ public class ExtractInfosFromJavaClasses {
 		                }
 		            }
 		        }.visit(JavaParser.parse(file), null);
-		         System.out.println(); // empty line
 		    } catch (IOException e) {
+		    	LOG.log(Level.SEVERE, "Exception occured while exploring the source code: " + e.toString(), e);
+		    	MessageBox messageDialog = new MessageBox(shell, SWT.ICON_ERROR | SWT.OK);
+				messageDialog.setText("ERROR");
+				messageDialog.setMessage("Could not generate the SenSoMod model!\nHave a look in the log file under " + targetDir + "\n");
+				messageDialog.open();
 		        new RuntimeException(e);
 		    }
 		}).explore(projectDir);
+		LOG.info("Successfully explored the source folder");
 	}
 	
 	private void setDecisionLogic(Node node, String decisionLogic) {
@@ -310,30 +345,28 @@ public class ExtractInfosFromJavaClasses {
 		}
 	}
 	 
-	 private void modellToXML(Modell modell, File targetDirectory)
-	    {
-	        try
-	        {
-	            //Create JAXB Context
-	            JAXBContext jaxbContext = JAXBContext.newInstance(Modell.class);
-	             
-	            //Create Marshaller
-	            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+	 private void modellToXML(Modell modell, File targetDirectory) throws JAXBException {
+		 Log.info("Start writing the model xml");
+	    //Create JAXB Context
+	    JAXBContext jaxbContext = JAXBContext.newInstance(Modell.class);
+	     
+	    //Create Marshaller
+        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 	 
-	            //Required formatting??
-	            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        //Required formatting??
+        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 	 
 	            
-	           //Store XML to File
-	            File file = new File(targetDirectory.getAbsolutePath() + File.separator + "generated.sensomod");
-	             
-	            //Writes XML file to file-system
-	            jaxbMarshaller.marshal(modell, file);
-	        }
-	        catch (JAXBException e)
-	        {
-	            e.printStackTrace();
-	        }
+       //Store XML to File
+	    File file = new File(targetDirectory.getAbsolutePath() + File.separator + "generated.sensomod");
+	    if(file.exists()) {
+	    	int random = (int) (Math.random() * 100);
+	    	file = new File(file.getAbsolutePath().replace("generated.sensomod", "generated" + random + ".sensomod"));
+
 	    }
+	    //Writes XML file to file-system
+	    jaxbMarshaller.marshal(modell, file);
+	    Log.info("End writing the model xml");
+	 }
 
 }

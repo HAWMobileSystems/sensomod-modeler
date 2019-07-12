@@ -2,7 +2,6 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:senSoMod="http://www.example.org/senSoMod" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_oKl18NsmEeepEOEnY0HmeA" selectedViews="_W9L9IJcsEemZcrgjJeewfQ" version="14.1.0.201810161215">
     <semanticResources>My.sensomod</semanticResources>
-    <semanticResources>test.sensomod</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_zz-68NsmEeepEOEnY0HmeA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='Model']"/>
     </ownedViews>
@@ -21,10 +20,6 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XqDqMJcsEemZcrgjJeewfQ" name="new diagram" repPath="#_XkyvsJcsEemZcrgjJeewfQ">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']"/>
         <target xmi:type="senSoMod:Modell" href="My.sensomod#/"/>
-      </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_hursoJczEemZcrgjJeewfQ" name="testDiagram" repPath="#_hts1MJczEemZcrgjJeewfQ">
-        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']"/>
-        <target xmi:type="senSoMod:Modell" href="test.sensomod#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -1782,14 +1777,14 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_huwlJJczEemZcrgjJeewfQ" fontName="Segoe UI" fontHeight="24"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwlJZczEemZcrgjJeewfQ" x="1175" y="250"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_hu02kJczEemZcrgjJeewfQ" type="2002" element="_ht6QkZczEemZcrgjJeewfQ">
+        <children xmi:type="notation:Node" xmi:id="_hu02kJczEemZcrgjJeewfQ" type="2002">
           <children xmi:type="notation:Node" xmi:id="_hu1doJczEemZcrgjJeewfQ" type="5006"/>
           <children xmi:type="notation:Node" xmi:id="_hu1doZczEemZcrgjJeewfQ" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_hu_1sJczEemZcrgjJeewfQ" type="3007" element="_huCzcJczEemZcrgjJeewfQ">
+            <children xmi:type="notation:Node" xmi:id="_hu_1sJczEemZcrgjJeewfQ" type="3007">
               <children xmi:type="notation:Node" xmi:id="_hu_1s5czEemZcrgjJeewfQ" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_hu_1tJczEemZcrgjJeewfQ" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_hvAcwJczEemZcrgjJeewfQ" type="3003" element="_huDagJczEemZcrgjJeewfQ">
+              <children xmi:type="notation:Node" xmi:id="_hvAcwJczEemZcrgjJeewfQ" type="3003">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_hvAcwZczEemZcrgjJeewfQ" fontName="Segoe UI"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hvAcwpczEemZcrgjJeewfQ"/>
               </children>
@@ -1822,14 +1817,14 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_hu2EsZczEemZcrgjJeewfQ" fontName="Segoe UI" fontHeight="24"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hu2EspczEemZcrgjJeewfQ" x="1315"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_hu2rw5czEemZcrgjJeewfQ" type="2002" element="_huEBk5czEemZcrgjJeewfQ">
+        <children xmi:type="notation:Node" xmi:id="_hu2rw5czEemZcrgjJeewfQ" type="2002">
           <children xmi:type="notation:Node" xmi:id="_hu3S0JczEemZcrgjJeewfQ" type="5006"/>
           <children xmi:type="notation:Node" xmi:id="_hu3S0ZczEemZcrgjJeewfQ" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_hvCR8JczEemZcrgjJeewfQ" type="3007" element="_huFPs5czEemZcrgjJeewfQ">
+            <children xmi:type="notation:Node" xmi:id="_hvCR8JczEemZcrgjJeewfQ" type="3007">
               <children xmi:type="notation:Node" xmi:id="_hvC5AJczEemZcrgjJeewfQ" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_hvC5AZczEemZcrgjJeewfQ" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_hvC5ApczEemZcrgjJeewfQ" type="3003" element="_huF2wJczEemZcrgjJeewfQ">
+              <children xmi:type="notation:Node" xmi:id="_hvC5ApczEemZcrgjJeewfQ" type="3003">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_hvC5A5czEemZcrgjJeewfQ" fontName="Segoe UI"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hvC5BJczEemZcrgjJeewfQ"/>
               </children>
@@ -2107,22 +2102,6 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_ht6QkZczEemZcrgjJeewfQ" name="Location" tooltipText="Context">
-      <target xmi:type="senSoMod:Context" href="test.sensomod#//@node.1"/>
-      <semanticElements xmi:type="senSoMod:Context" href="test.sensomod#//@node.1"/>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ht63oJczEemZcrgjJeewfQ" labelSize="24" iconPath="/SenSoMod.design/img/icon_context.png" workspacePath="/SenSoMod.design/img/context.svg">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_huCzcJczEemZcrgjJeewfQ" name="if (routerName == &quot;SSID1&quot; || (longitude == 12.114 &amp;&amp; latitude == 48.547)) {&#xD;&#xA;    } else {&#xD;&#xA;        Location = &quot;Unknown&quot;;&#xD;&#xA;    }" width="33" height="15" resizeKind="NSEW">
-        <target xmi:type="senSoMod:DecisionLogic" href="test.sensomod#//@node.1/@decisionlogic"/>
-        <semanticElements xmi:type="senSoMod:DecisionLogic" href="test.sensomod#//@node.1/@decisionlogic"/>
-        <ownedStyle xmi:type="diagram:Square" uid="_huDagJczEemZcrgjJeewfQ" labelSize="12" iconPath="/SenSoMod.design/img/icon_decision_logic.png" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" width="33" height="15" color="255,255,255">
-          <description xmi:type="style:SquareDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subNodeMappings[name='Decision%20Logic']"/>
-      </ownedDiagramElements>
-    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_huEBkJczEemZcrgjJeewfQ" name="Ce" tooltipText="Context Expression" incomingEdges="_huUgQJczEemZcrgjJeewfQ">
       <target xmi:type="senSoMod:ContextDescription" href="My.sensomod#//@node.0"/>
       <semanticElements xmi:type="senSoMod:ContextDescription" href="My.sensomod#//@node.0"/>
@@ -2134,22 +2113,6 @@
         <target xmi:type="senSoMod:ContextExpression" href="My.sensomod#//@node.0/@contextexpression"/>
         <semanticElements xmi:type="senSoMod:ContextExpression" href="My.sensomod#//@node.0/@contextexpression"/>
         <ownedStyle xmi:type="diagram:Square" uid="_huFPsZczEemZcrgjJeewfQ" labelSize="24" showIcon="false" labelPosition="node" width="33" height="15" color="255,255,255">
-          <description xmi:type="style:SquareDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
-      </ownedDiagramElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_huEBk5czEemZcrgjJeewfQ" name="Ce" tooltipText="Context Expression">
-      <target xmi:type="senSoMod:ContextDescription" href="test.sensomod#//@node.0"/>
-      <semanticElements xmi:type="senSoMod:ContextDescription" href="test.sensomod#//@node.0"/>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_huEooJczEemZcrgjJeewfQ" labelSize="24" iconPath="/SenSoMod.design/img/icon_contextexpression.png" workspacePath="/SenSoMod.design/img/contextexpression.svg">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_huFPs5czEemZcrgjJeewfQ" name="Location = &quot;At Work&quot;;" width="33" height="15" resizeKind="NSEW">
-        <target xmi:type="senSoMod:ContextExpression" href="test.sensomod#//@node.0/@contextexpression"/>
-        <semanticElements xmi:type="senSoMod:ContextExpression" href="test.sensomod#//@node.0/@contextexpression"/>
-        <ownedStyle xmi:type="diagram:Square" uid="_huF2wJczEemZcrgjJeewfQ" labelSize="24" showIcon="false" labelPosition="node" width="33" height="15" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer/@containerMappings[name='ContextDescNode']/@subNodeMappings[name='Context%20Expression']"/>
@@ -2318,6 +2281,5 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_httcQJczEemZcrgjJeewfQ"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/SenSoMod.design/description/SenSoMod.odesign#//@ownedViewpoints[name='SenSoMod']/@ownedRepresentations[name='diagram']/@defaultLayer"/>
-    <target xmi:type="senSoMod:Modell" href="test.sensomod#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>
