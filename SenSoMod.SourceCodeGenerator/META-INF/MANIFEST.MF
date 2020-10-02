@@ -4,7 +4,7 @@ Bundle-Name: SourceCodeGenerator
 Bundle-SymbolicName: SenSoMod.SourceCodeGenerator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
- com.github.javaparser.javaparser-core;visibility:=reexport,
+ com.github.javaparser.javaparser-core;bundle-version="3.5.10";visibility:=reexport,
  com.google.guava;bundle-version="21.0.0",
  org.eclipse.core.runtime;bundle-version="3.14.0",
  org.eclipse.core.resources;bundle-version="3.13.0"
