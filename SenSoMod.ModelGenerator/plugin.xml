@@ -10,7 +10,7 @@
       </category>
       <command
             categoryId="SenSoMod.ModelGenerator.commands.category"
-            name="Sample Command"
+            name="Generate Model"
             id="SenSoMod.ModelGenerator.commands.sampleCommand">
       </command>
    </extension>
@@ -36,7 +36,7 @@
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
                id="SenSoMod.ModelGenerator.menus.sampleMenu"
-               label="Sample Menu"
+               label="Generate SenSoMod-Model from JavaSourceCode"
                mnemonic="M">
             <command
                   commandId="SenSoMod.ModelGenerator.commands.sampleCommand"
